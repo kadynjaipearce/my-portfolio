@@ -2,26 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: "RenoMono", monospace;
+  font-size: 15px;
+  line-height: 1.6em;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+  font-family: "RenoMono";
+  src: /* url('../fonts/LiberationMono-Bold.ttf') format('truetype'),
+       url('../fonts/LiberationMono-BoldItalic.ttf') format('truetype'),
+       url('../fonts/LiberationMono-Italic.ttf') format('truetype'), */ url("../fonts/LiberationMono-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item:hover {
+  transition: ease-in-out 0.3s;
+}
+
+.nav-menu-bar {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+
+.nav-menu-bar div {
+  z-index: 1000;
+  margin-right: 10px;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  transition: all 0.3s;
+}
+
+.nav-menu {
+  z-index: 1000;
+  width: 0%;
+  transition: ease-in-out 0.3s;
+}
+
+.category-item.active {
+  @apply underline duration-200 ease-in-out;
+}
+
+/* === ANIMATIONS FOR NAV MENU BARS === */
+.nav-menu-bar.active div:nth-child(2) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.nav-menu-bar.active div:nth-child(1) {
+  animation: bar1Anim 0.3s ease-in-out forwards;
+}
+
+@keyframes bar1Anim {
+  50% {
+    transform: translateY(9px);
+  }
+  100% {
+    transform: translateY(9px) rotateZ(45deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.nav-menu-bar.active div:nth-child(3) {
+  animation: bar2Anim 0.3s ease-in-out forwards;
+}
+
+@keyframes bar2Anim {
+  50% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(-9px) rotateZ(135deg);
+  }
+}
+
+.nav-menu-bar.reverse div:nth-child(1) {
+  animation: bar1RevAnim 0.3s ease-in-out;
+}
+
+@keyframes bar1RevAnim {
+  0% {
+    transform: translateY(9px) rotateZ(45deg);
+  }
+  50% {
+    transform: translateY(9px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.nav-menu-bar.reverse div:nth-child(3) {
+  animation: bar3RevAnim 0.3s ease-in-out;
+}
+
+@keyframes bar3RevAnim {
+  0% {
+    transform: translateY(-9px) rotateZ(135deg);
+  }
+  50% {
+    transform: translateY(-9px) rotateZ(0deg);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-item::before {
+    background-color: black;
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 12px;
+    transition: width 0.2s;
+    width: 0;
+  }
+
+  .nav-item:hover::before,
+  .nav-item.active::before {
+    width: calc(100% + 4px);
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-menu.active {
+    background-color: white;
+    width: 60%;
+  }
 }
