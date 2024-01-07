@@ -10,11 +10,8 @@ interface NavItemProps {
 
 function NavItem({ title, url, active }: NavItemProps) {
   return (
-    <Link
-      href={url}
-      className={`nav-item ${active ? "active" : ""} hover:text-blue`}
-    >
-      {title}
+    <Link href={url}>
+      /<span className="hover:underline">{title.slice(1)}</span>
     </Link>
   );
 }

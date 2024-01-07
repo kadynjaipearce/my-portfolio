@@ -1,0 +1,25 @@
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <Link href=""></Link>
+
+
+  </head>
+  <body>
+
+    {% if user.is_authenticated%}
+
+    <h1 style="text-align: center; font-weight: 800;">Hello <span style="text-decoration: underline;">{{ user.get_username }}</span>, Welcome to your Dashboard</h1>
+
+    {% else %}
+
+    <h1>Please Login</h1>
+    <a href="/admin" style="text-decoration: underline;">Click here to Login</a>
+
+  </body>
+</html>
+{% endif %}

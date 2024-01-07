@@ -20,15 +20,6 @@
   text-rendering: optimizeLegibility;
 }
 
-.nav-item {
-  position: relative;
-  display: inline-block;
-}
-
-.nav-item:hover {
-  transition: ease-in-out 0.3s;
-}
-
 .nav-menu-bar {
   -webkit-tap-highlight-color: transparent;
   display: flex;
@@ -120,26 +111,10 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .nav-item::before {
-    background-color: black;
-    content: "";
-    position: absolute;
-    height: 2px;
-    bottom: 12px;
-    transition: width 0.2s;
-    width: 0;
-  }
-
-  .nav-item:hover::before,
-  .nav-item.active::before {
-    width: calc(100% + 4px);
-  }
-}
-
 @media (max-width: 767px) {
   .nav-menu.active {
-    background-color: white;
+    --tw-bg-opacity: 1;
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity));
     width: 60%;
   }
 }

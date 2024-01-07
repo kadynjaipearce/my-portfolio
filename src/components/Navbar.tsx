@@ -13,7 +13,7 @@ const navItems: navItemTypes[] = [
   { title: "/About", url: "/about" },
   { title: "/Projects", url: "/projects" },
   { title: "/Learning", url: "/learning" },
-  { title: "/Contact-Me", url: "/contact" },
+  { title: "/Contact-Me", url: "/contact-me" },
 ];
 
 export default function Navbar() {
@@ -25,17 +25,34 @@ export default function Navbar() {
   const [navActive, setNavActive] = useState<boolean>(false);
   const [closing, setClosing] = useState<boolean>(false);
 
+  const pathSegments = pathname.split("/").filter((segment) => segment !== "");
+
   return (
-    <header className="lg:px-60 md:px-10 mt-3">
+    <header className="mt-3 top-0">
       <div className="bg-white text-black z-[1000] items-center justify-between w-full px-5 md:flex  bg-primary mb-1 ">
-        <div className="flex items-center justify-between w-full md:w-auto my-3">
-          <div
-            onClick={() => {
-              setActiveIdx(null);
-              setNavActive(false);
-            }}
-          >
-            <Link href={"/"}>$ kadynpearce.dev</Link>
+        <div className="flex items-center justify-between w-full md:w-auto my-5 md:my-3">
+          <div>
+            {" "}
+            ${" "}
+            <Link
+              href={"/"}
+              className="hover:underline"
+              onClick={() => {
+                setActiveIdx(null);
+                setNavActive(false);
+              }}
+            >
+              kadynpearce.dev
+            </Link>
+            {pathSegments.map((segment, index) => (
+              <span key={index}>
+                {index > 0 && "/"}
+                <Link href={`/${pathSegments.slice(0, index + 1).join("/")}`}>
+                  {index === 0 && "/"}
+                  <span className="hover:underline">{segment}</span>
+                </Link>
+              </span>
+            ))}
           </div>
 
           <div
@@ -59,9 +76,8 @@ export default function Navbar() {
             <div></div>
           </div>
         </div>
-
         <div
-          className={`fixed top-[49px] right-0 bottom-0  ${
+          className={`fixed top-0 right-0 bottom-0  ${
             navActive ? "active" : ""
           }  nav-menu  bg-primary z-[1000] md:static md:flex md:space-x-4 md:items-center md:w-auto`}
         >
@@ -79,6 +95,9 @@ export default function Navbar() {
               </div>
             );
           })}
+          <Link href={"/api/download"} className="text-blue-500">
+            $ wget resume
+          </Link>
         </div>
       </div>
       <div className=" bg-black py-[1px]"></div>
