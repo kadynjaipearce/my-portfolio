@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import prisma from "../utils/database";
 import Link from "next/link";
-import { time } from "console";
 
 export const metadata = {
   title: "projects",
@@ -23,7 +22,7 @@ export default async function page() {
           <div key={idx} className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
             <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
               <Image
-                className="lg:h-80 md:h-36 w-full hover:blur-sm"
+                className="lg:h-96 md:h-36 w-full hover:blur-sm"
                 height={1000}
                 width={1000}
                 src={`/${item.img}.png`}

@@ -6,16 +6,5 @@ export const metadata = {
 };
 
 export default function page() {
-  return (
-    <div className="my-10 h-screen flex space-x-5">
-      <div className="bg-blue-300 w-full h-3/5 rounded-xl">a</div>
-      <div className="space-y-40">
-        <div className="bg-blue-700 w-40 h-40 rounded-md">
-          TypeScript / JavaScript
-        </div>
-        <div className="bg-blue-400 w-40 h-40 rounded-md">C++</div>
-        <div className="bg-yellow-300 w-40 h-40 rounded-md">Python</div>
-      </div>
-    </div>
-  );
+  return <div></div>;
 }

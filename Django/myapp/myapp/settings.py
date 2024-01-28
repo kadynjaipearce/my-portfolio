@@ -36,7 +36,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'login',
+    'tailwind',
+    'theme'
 ]
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+  "127.0.0.1"
+]
+
+NPM_BIN_PATH = ""
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

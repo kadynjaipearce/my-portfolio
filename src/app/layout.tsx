@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: { default: "kadynpearce", template: "kadynpearce/%s" },
@@ -16,9 +17,10 @@ export default function RootLayout({
   return (
     <UserProvider>
       <html lang="en">
-        <body className="mx-auto container px-4 lg:px-0 ">
+        <body className="container px-4 mx-auto md:px-0">
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </UserProvider>
