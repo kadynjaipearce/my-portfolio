@@ -1,4 +1,4 @@
-import prisma from "@/app/utils/database";
+import prisma from "@/lib/utils";
 import Markdown from "react-markdown";
 
 export default async function Page({

@@ -4,11 +4,6 @@ import Link from "next/link";
 import NavItem from "./Navitem";
 import { HiDownload } from "react-icons/hi";
 
-interface navItemTypes {
-  title: string;
-  url: string;
-}
-
 const navItems: navItemTypes[] = [
   { title: "/About", url: "/about" },
   { title: "/Projects", url: "/projects" },
@@ -20,14 +15,14 @@ export default function Navbar() {
   const [navActive, setNavActive] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 pt-1 font-semibold bg-white md:mt-4">
-      <div className="items-center justify-between w-full mb-1 text-black dark:bg-black dark:text-white md:flex bg-primary">
-        <div className="flex items-center justify-between w-full ml-2 sm:ml-0 md:w-auto md:my-3">
-          <div>
+    <header className="sticky top-0 z-50 px-3 pt-1 mx-auto font-semibold bg-white containert lg:mt-4">
+      <div className="items-center justify-between text-black dark:bg-black dark:text-white lg:flex bg-primary">
+        <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
+          <div className="pl-0 sm:pl-4">
             $ {""}
             <Link
               href={"/"}
-              className="hover:underline"
+              className="hover:underline text-[18px]"
               onClick={() => {
                 setNavActive(false);
               }}
@@ -42,10 +37,12 @@ export default function Navbar() {
             }}
             className={`${
               navActive ? "active" : ""
-            } nav-menu-bar md:hidden z-[1001]`}
+            } nav-menu-bar lg:hidden z-[1001]`}
           >
             <svg
-              className={`bars ${navActive ? "active" : ""} p-2 -mt-1`}
+              className={`bars ${
+                navActive ? "active" : ""
+              } p-3 sm:p-2 -mt-1 xs:-mr-0`}
               viewBox="0 0 100 100"
             >
               <path
@@ -66,12 +63,15 @@ export default function Navbar() {
         <div
           className={`fixed top-0 right-0 bottom-0  ${
             navActive ? "active" : ""
-          }  nav-menu z-[1000] md:static md:flex md:space-x-4  md:w-auto`}
+          }  nav-menu z-[1000] lg:static lg:flex lg:space-x-4  lg:w-auto`}
         >
-          <div className="mt-16 mr-0 sm:mr-6 md:mt-0 md:static md:flex md:space-x-4 md:items-center md:w-auto">
+          <div className="mt-16 mr-0 sm:mr-6 lg:mt-0 lg:static lg:flex lg:space-x-4 lg:items-center lg:w-auto">
             {navItems.map((item) => {
               return (
-                <div key={item.title} className={`mx-5 md:my-0 my-7 md:mx-0`}>
+                <div
+                  key={item.title}
+                  className={`mx-5 lg:my-0 my-7 lg:mx-0 text-[18px]`}
+                >
                   <Link
                     href={item.url}
                     onClick={() => {
@@ -86,10 +86,10 @@ export default function Navbar() {
           </div>
           <Link
             href={"/api/download"}
-            className="p-[3px] inter rounded bg-gradient-to-r from-blue-500 to-purple-500"
+            className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded bg-gradient-to-r from-blue-500 to-purple-500 block lg:inline-block lg:link-button`}
           >
-            <span className="flex w-full px-6 py-[6px] text-black bg-white rounded ">
-              Download My Resume <HiDownload className="mt-[7px] ml-2" />
+            <span className="flex w-full lg:w-auto px-4 lg:px-4 py-[4px] lg:py-[4px] text-white bg-black rounded">
+              Download My Resume <HiDownload className="mt-[7px] lg:ml-2" />
             </span>
           </Link>
         </div>

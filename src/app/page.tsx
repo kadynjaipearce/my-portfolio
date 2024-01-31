@@ -1,18 +1,13 @@
 import Hero from "@/components/Hero";
-import Image from "next/image";
-import { HiOutlineLocationMarker } from "react-icons/hi";
-
-let res = async () => {
-  let response = await fetch("http://localhost:3000/api/download", {
-    method: "GET",
-  });
-  return response;
-};
+import Gradient from "@/components/Gradient";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
-    <main className="flex dark:text-white dark:bg-black">
-      <Hero></Hero>
+    <main className=" dark:text-white dark:bg-black">
+      <Hero />
+      <Gradient height="60" />
+      <Experience />
     </main>
   );
 }

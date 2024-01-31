@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import prisma from "../utils/database";
+import prisma from "../../lib/utils";
 import Link from "next/link";
 
 export const metadata = {

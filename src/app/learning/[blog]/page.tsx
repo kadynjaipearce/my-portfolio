@@ -1,4 +1,4 @@
-import prisma from "@/app/utils/database";
+import prisma from "@/lib/utils";
 import Image from "next/image";
 import Markdown from "react-markdown";
 

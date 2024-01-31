@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import prisma from "../utils/database";
+import prisma from "../../lib/utils";
 import Link from "next/link";
 
 export const metadata = {
@@ -16,40 +16,40 @@ export default async function page() {
   });
 
   return (
-    <div className="flex flex-wrap -mx-4 my-10">
+    <div className="flex flex-wrap my-10 -mx-4">
       {projects.map((item, idx) => {
         return (
-          <div key={idx} className="w-full md:w-1/2 lg:w-1/2 px-4 mb-8">
-            <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+          <div key={idx} className="w-full px-4 mb-8 md:w-1/2 lg:w-1/2">
+            <div className="h-full overflow-hidden border-2 border-gray-200 rounded-lg border-opacity-60">
               <Image
-                className="lg:h-96 md:h-36 w-full hover:blur-sm"
+                className="w-full lg:h-96 md:h-36 hover:blur-sm"
                 height={1000}
                 width={1000}
                 src={`/${item.img}.png`}
                 alt={item.title}
               />
               <div className="p-6">
-                <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <h2 className="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">
                   SOFTWEAR ENGINEER
                 </h2>
                 <div className="flex justify-between">
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
                     {item.title}
                   </h1>
-                  <div className="flex space-x-2 items-center">
+                  <div className="flex items-center space-x-2">
                     <p className="bg-[#1b1b1b] text-white px-3 rounded-full">
                       Solidity
                     </p>
                     <p className="bg-[#efd81d] px-3 rounded-full">JavaScript</p>
                   </div>
                 </div>
-                <p className="leading-relaxed mb-3">
+                <p className="mb-3 leading-relaxed">
                   {item.body.slice(0, 200)}...
                 </p>
-                <div className="flex items-center flex-wrap">
+                <div className="flex flex-wrap items-center">
                   <Link
                     href={`projects/${item.slug}`}
-                    className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+                    className="inline-flex items-center text-indigo-500 md:mb-2 lg:mb-0"
                   >
                     Learn More
                     <svg
@@ -65,7 +65,7 @@ export default async function page() {
                       <path d="M12 5l7 7-7 7"></path>
                     </svg>
                   </Link>
-                  <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <span className="inline-flex items-center py-1 pr-3 ml-auto mr-3 text-sm leading-none text-gray-400 border-r-2 border-gray-200 lg:ml-auto md:ml-0">
                     <svg
                       className="w-4 h-4 mr-1"
                       stroke="currentColor"
@@ -80,7 +80,7 @@ export default async function page() {
                     </svg>
                     Github
                   </span>
-                  <span className="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <span className="inline-flex items-center text-sm leading-none text-gray-400">
                     <svg
                       className="w-4 h-4 mr-1"
                       stroke="currentColor"
