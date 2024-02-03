@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import NavItem from "./Navitem";
 import { HiDownload } from "react-icons/hi";
+import { navItemTypes } from "@/lib/types";
 
 const navItems: navItemTypes[] = [
   { title: "/Home", url: "/" },

@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
-interface navItemTypes {
+export interface navItemTypes {
   title: string;
   url: string;
 }
 
-interface ContainerProps {
+export interface ContainerProps {
   children: ReactNode;
 }
