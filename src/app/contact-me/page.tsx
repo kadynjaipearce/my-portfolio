@@ -9,9 +9,33 @@ export default function Page() {
     message: "",
   });
 
-  async function handleSendEmail(data) {
-    const res = fetch();
+  async function handleSendEmail() {
+    try {
+      const res = await fetch("http://localhost:3000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      });
+
+      if (res.ok) {
+        let data = await res.json();
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({ ...prevData, [name]: value }));
+  };
   return (
     <Container>
       <section className="relative flex items-center justify-center h-screen">
@@ -36,6 +60,8 @@ export default function Page() {
                     type="text"
                     id="name"
                     name="name"
+                    value={data.name}
+                    onChange={handleInputChange}
                     className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
                   />
                 </div>
@@ -49,6 +75,8 @@ export default function Page() {
                     type="email"
                     id="email"
                     name="email"
+                    value={data.email}
+                    onChange={handleInputChange}
                     className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
                   />
                 </div>
@@ -61,12 +89,17 @@ export default function Page() {
                   <textarea
                     id="message"
                     name="message"
+                    value={data.message}
+                    onChange={handleInputChange}
                     className="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
                   ></textarea>
                 </div>
               </div>
               <div className="w-full p-2">
-                <button className="flex px-8 py-2 mx-auto text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">
+                <button
+                  className="flex px-8 py-2 mx-auto text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
+                  onClick={handleSendEmail}
+                >
                   Button
                 </button>
               </div>
@@ -81,9 +114,6 @@ export default function Page() {
                   <a className="text-gray-500">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -93,9 +123,6 @@ export default function Page() {
                   <a className="ml-4 text-gray-500">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -106,9 +133,6 @@ export default function Page() {
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
@@ -126,9 +150,6 @@ export default function Page() {
                   <a className="ml-4 text-gray-500">
                     <svg
                       fill="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >

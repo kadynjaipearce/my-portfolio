@@ -1,21 +1,18 @@
-import "dotenv/config";
-import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+export async function POST(request: Request) {
+  try {
+    const { name, email, message } = await request.json();
+    console.log("Name: ", name, "Email: ", email, "Message: ", message);
 
-export async function GET(req: Request) {
-  const mailerSend = new MailerSend({
-    apiKey: process.env.MAILERSEND_API_KEY ?? "",
-  });
+    // todo validate input.
 
-  const sentFrom = new Sender("you@yourdomain.com", "Your name");
-
-  const recipients = [new Recipient("your@client.com", "Your Client")];
-
-  const emailParams = new EmailParams()
-    .setFrom(sentFrom)
-    .setTo(recipients)
-    .setReplyTo(sentFrom)
-    .setSubject("This is a Subject")
-    .setTemplateId("templateId");
-
-  await mailerSend.email.send(emailParams);
+    if (name == "") {
+      throw new Error("Please Provide all details");
+    }
+    return Response.json("Success", { status: 200 });
+  } catch (error) {
+    console.log(error);
+    return Response.json(`${error}`, {
+      status: 469,
+    });
+  }
 }
