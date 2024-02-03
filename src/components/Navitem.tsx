@@ -1,18 +1,10 @@
-"use client";
 import React from "react";
-import Link from "next/link";
 
-interface NavItemProps {
-  url: string;
-  title: string;
-  active: boolean;
-}
-
-function NavItem({ title, url, active }: NavItemProps) {
+function NavItem({ title }: { title: string }) {
   return (
-    <Link href={url}>
+    <div>
       /<span className="hover:underline">{title.slice(1)}</span>
-    </Link>
+    </div>
   );
 }
 

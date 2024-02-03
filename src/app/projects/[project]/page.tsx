@@ -1,5 +1,4 @@
-import prisma from "@/app/utils/database";
-import Image from "next/image";
+import prisma from "@/lib/utils";
 import Markdown from "react-markdown";
 
 export default async function Page({
@@ -17,25 +16,15 @@ export default async function Page({
       {data && (
         <div>
           My Post: {params.project} {data?.title}
-          <div className="w-full">
-            <Image
-              src={`/${data.img}.png`}
-              alt={data.title}
-              width={10000}
-              height={10000}
-              className="rounded-xl"
-            ></Image>
-          </div>
-          <div className=" h-screen rounded-lg mt-10 space-y-10">
+          <div className="mt-10 rounded-lg ">
             <div className="flex justify-between">
-              <h1 className="title-font text-3xl">{data.title}</h1>
+              <h1 className="text-3xl title-font">{data.title}</h1>
               <h1 className="text-xl italic">{data.createdAt.toString()}</h1>
             </div>
-            <Markdown>{data.body}</Markdown>
           </div>
         </div>
       )}
-      {!data && <div className="text-center text-3xl">This doesnt Exist</div>}
+      {!data && <div className="text-3xl text-center">This doesnt Exist</div>}
     </div>
   );
 }

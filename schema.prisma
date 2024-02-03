@@ -13,6 +13,7 @@ model Post {
   img      String
   title    String
   body     String
+  category String
   githubUrl String
   websiteUrl String
   createdAt     DateTime  @default(now())
@@ -24,6 +25,7 @@ model Project {
   img      String
   title    String
   body     String
+  category String
   githubUrl     String
   websiteUrl      String
   createdAt     DateTime  @default(now())

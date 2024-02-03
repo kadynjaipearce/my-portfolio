@@ -1,0 +1,106 @@
+<div className="min-h-screen flex justify-center items-center bg-gray-50/50">
+      <div className="bg-white rounded-md shadow-md w-[400px] h-[650px] p-11">
+        <div className="flex flex-col h-full space-y-6">
+          <div className="flex-none flex flex-col justify-center items-center mt-4">
+            <Image src={Logo} alt="G" height={78} className="mb-4" />
+            <h2 className="font-bold align-center">Cobalt Systems</h2>
+          </div>
+
+          <form
+            onSubmit={onSubmitHandler}
+            className="flex-grow flex flex-col justify-center"
+          >
+            <div className={`relative ${emailValid ? "mb-5" : "mb-3"}`}>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={user.email}
+                onChange={onChangeHandler}
+                autoComplete="username"
+                className="border border-gray-400 w-full rounded h-10 p-2 text-sm"
+                onFocus={() => setFocusedField("email")}
+                onBlur={() => setFocusedField("")}
+              />
+              <label
+                htmlFor="email"
+                className={`absolute top-0 left-2 select-none ${
+                  focusedField === "email" || user.email
+                    ? "-mt-3 text-sm left-[6px] px-[5px] bg-white"
+                    : "mt-2 text-gray-700"
+                }`}
+              >
+                Email address
+              </label>
+              {!emailValid && (
+                <p className="text-red-500 text-xs px-1 mt-2">
+                  Invalid email address!
+                </p>
+              )}
+            </div>
+
+            <div className="relative flex-grow inline-block">
+              <div className="relative">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={user.password}
+                  onChange={onChangeHandler}
+                  autoComplete="current-password"
+                  className={`border border-gray-400 w-full rounded h-10 p-2 pr-8 text-sm}
+                />
+              </div>
+
+              <label
+                htmlFor="password"
+                className={`absolute top-0 left-2 select-none ${
+                  focusedField === "password" || user.password
+                    ? "-mt-3 text-sm left-[6px] px-[5px] bg-white"
+                    : "mt-2 text-gray-700"
+                }`}
+              >
+                Password
+              </label>
+              {!passwordValid && (
+                <p className="text-red-500 text-xs px-1 mt-2">
+                  Password must be 8+ chars with uppercase, lowercase, number,
+                  and a symbol.
+                </p>
+              )}
+              <div className="flex items-center mt-4">
+                <div className="flex-grow border-t border-gray-300"></div>
+                <span className="mx-3  text-sm">Or continue with</span>
+                <div className="flex-grow border-t border-gray-300"></div>
+              </div>
+
+              <button
+                type="button"
+                className="w-full mt-4 h-12 border border-gray-500/25 text-gray-700 rounded-md flex items-center p-4 hover:bg-gray-100 transition duration-100"
+              >
+                <Image src={googleLogo} alt="G" height={18} />
+                <span className="px-4">Continue with Google</span>
+              </button>
+            </div>
+
+            <div className="flex-none mb-4">
+              <button
+                type="submit"
+                className="w-full bg-[#007BFF] hover:bg-blue-700 text-white p-2 rounded"
+              >
+                Sign In
+              </button>
+            </div>
+            <p className="text-sm text-center">
+              Don&apos;t have an account?{""}
+              <Link
+                href="/register"
+                className="hover:underline text-blue-700 px-1"
+              >
+                Register Now
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
