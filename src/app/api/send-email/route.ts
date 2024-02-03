@@ -1,14 +1,21 @@
+import "dotenv/config";
+import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+
 export async function GET(req: Request) {
-  // Validate the data.
+  const mailerSend = new MailerSend({
+    apiKey: process.env.MAILERSEND_API_KEY ?? "",
+  });
 
-  // Format the data.
+  const sentFrom = new Sender("you@yourdomain.com", "Your name");
 
-  // Use send-grid to email myself.
-  // Create email template.
+  const recipients = [new Recipient("your@client.com", "Your Client")];
 
-  // Use send-grid to email user.
-  // Create email template.
+  const emailParams = new EmailParams()
+    .setFrom(sentFrom)
+    .setTo(recipients)
+    .setReplyTo(sentFrom)
+    .setSubject("This is a Subject")
+    .setTemplateId("templateId");
 
-  // If all works return OK to frontend.
-  return new Response();
+  await mailerSend.email.send(emailParams);
 }

@@ -1,13 +1,15 @@
 import Hero from "@/components/Hero";
-import Gradient from "@/components/Gradient";
+import HeroMarquee from "@/components/HeroMarquee";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 export default function Home() {
   return (
     <main className=" dark:text-white dark:bg-black">
       <Hero />
-      <Gradient height="60" />
+      <HeroMarquee height="60" />
       <Experience />
+      <Education />
     </main>
   );
 }
