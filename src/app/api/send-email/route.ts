@@ -1,13 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import validator from "validator";
-
-interface RequestBody {
-  data: {
-    name: string;
-    email: string;
-    message: string;
-  };
-}
+import { RequestBody } from "@/lib/types";
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {

@@ -8,3 +8,11 @@ export interface navItemTypes {
 export interface ContainerProps {
   children: ReactNode;
 }
+
+export interface RequestBody {
+  data: {
+    name: string;
+    email: string;
+    message: string;
+  };
+}
