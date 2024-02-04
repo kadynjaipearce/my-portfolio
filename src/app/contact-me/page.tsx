@@ -16,11 +16,7 @@ export default function Page() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          message: data.message,
-        }),
+        body: JSON.stringify({ data: data }),
       });
 
       if (res.ok) {
