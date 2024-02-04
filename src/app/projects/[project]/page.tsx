@@ -1,4 +1,6 @@
+import Container from "@/components/Container";
 import prisma from "@/lib/utils";
+import Image from "next/image";
 
 export default async function Page({
   params,
@@ -11,19 +13,8 @@ export default async function Page({
     },
   });
   return (
-    <div>
-      {data && (
-        <div>
-          My Post: {params.project} {data?.title}
-          <div className="mt-10 rounded-lg ">
-            <div className="flex justify-between">
-              <h1 className="text-3xl title-font">{data.title}</h1>
-              <h1 className="text-xl italic">{data.createdAt.toString()}</h1>
-            </div>
-          </div>
-        </div>
-      )}
-      {!data && <div className="text-3xl text-center">This doesnt Exist</div>}
-    </div>
+    <Container>
+      <div></div>
+    </Container>
   );
 }

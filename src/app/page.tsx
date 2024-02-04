@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className=" dark:text-white dark:bg-black">
       <Hero />
-      <HeroMarquee height="60" />
+      <HeroMarquee />
       <Experience />
       <Education />
     </main>

@@ -34,8 +34,8 @@ export default function Page() {
   };
   return (
     <Container>
-      <section className="relative flex items-center justify-center h-screen">
-        <div className="container px-5 py-24 mx-auto">
+      <section className="flex items-center justify-center h-screen">
+        <div className="container px-5 mx-auto">
           <div className="flex flex-col w-full mb-12 text-center">
             <h1 className="mb-4 text-5xl font-bold text-gray-900 inter sm:text-7xl ">
               Want to work together?

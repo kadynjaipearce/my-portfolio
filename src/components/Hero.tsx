@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="flex my-10 md:my-40 ">
         <div className="flex-grow">
           <div className="font-bold text-[60px] md:text-8xl inter">
-            <span className="font-bold text-transparent inter  bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
+            <span className="font-bold text-transparent inter bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
               Welcome,
             </span>{" "}
             I&apos;m <br /> Kadyn-Jai Pearce, <br /> a Software Engineer.
@@ -38,15 +38,24 @@ export default function Hero() {
             </div>
 
             <div className="flex space-x-5 text-3xl">
-              <Link href="https://github.com/kadynjaipearce">
-                <RiGithubLine className="" />
+              <Link
+                href="https://github.com/kadynjaipearce"
+                className="hover:bg-gray-200 rounded-full p-1"
+              >
+                <RiGithubLine />
               </Link>
 
-              <Link href="https://www.instagram.com/kadynpearce/">
+              <Link
+                href="https://www.instagram.com/kadynpearce/"
+                className="hover:bg-gray-200 rounded-full p-1"
+              >
                 <RiInstagramLine className="" />
               </Link>
 
-              <Link href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/">
+              <Link
+                href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
+                className="hover:bg-gray-200 rounded-full p-1"
+              >
                 <RiLinkedinFill className="" />
               </Link>
             </div>
@@ -57,7 +66,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] blur-[106px]"></div>
 
             <Image
-              src={"/image.png"}
+              src={"/"}
               layout="fill"
               objectFit="cover"
               alt=""

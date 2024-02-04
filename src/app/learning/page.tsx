@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import prisma from "../../lib/utils";
-import Link from "next/link";
+import Container from "@/components/Container";
 
 export const metadata = {
   title: "projects",
@@ -16,58 +15,8 @@ export default async function page() {
   });
 
   return (
-    <div className="container py-10 mx-auto">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {blogPosts.map((item, idx) => {
-          return (
-            <div key={idx} className="py-5">
-              <Image
-                className="object-cover object-center w-full h-64 rounded-lg lg:h-80"
-                src={`/${item.img}.png`}
-                alt=""
-                height={1000}
-                width={1000}
-              />
-
-              <div className="mt-8">
-                <span className="text-blue-500 uppercase">{item.category}</span>
-
-                <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
-                  {item.title}
-                </h1>
-
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  {item.body.length > 200 && <p>{item.body.slice(1, 200)}</p>}
-                  {item.body}
-                  ...
-                </p>
-
-                <div className="flex items-center justify-between mt-4">
-                  <div>
-                    <a
-                      href="#"
-                      className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:underline hover:text-gray-500"
-                    >
-                      John snow
-                    </a>
-
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {item.createdAt.toString().slice(0, 25)}
-                    </p>
-                  </div>
-
-                  <a
-                    href="#"
-                    className="inline-block text-blue-500 underline hover:text-blue-400"
-                  >
-                    Read more
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <Container>
+      <div></div>
+    </Container>
   );
 }

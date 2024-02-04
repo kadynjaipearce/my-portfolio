@@ -16,8 +16,8 @@ export default function Navbar() {
   const [navActive, setNavActive] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
-      <div className="px-3 pt-1 mx-auto font-semibold bg-white containert lg:mt-4">
+    <header className="sticky top-0 z-50 bg-white lg:bg-white/50 lg:backdrop-blur-xl border-b">
+      <div className="px-3 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
         <div className="items-center justify-between text-black dark:bg-black dark:text-white lg:flex">
           <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
             <div className="pl-0 sm:pl-4">
