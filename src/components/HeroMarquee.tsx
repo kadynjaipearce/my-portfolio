@@ -7,12 +7,12 @@ import Link from "next/link";
 export default function Gradient() {
   return (
     <div className="overflow-x-clip">
-      <div className=" w-full px-0 mx-0 bg-black dark:bg-white/50 h-[120px] bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8]">
-        <div className="w-[105%] -ml-3 lg:-ml-12 h-[120px] bg-black dark:bg-white/75 -rotate-[2deg] relative top-12">
+      <div className=" w-full px-0 mx-0 bg-black dark:bg-white/50 h-[120px] bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-[#ffffff81]">
+        <div className="w-[105%] -ml-3 lg:-ml-14 h-[120px] bg-black dark:bg-white -rotate-[2deg] relative top-12">
           <Container>
             <div className="">
               <Marquee
-                className="top-[18px]"
+                className="top-[20px]"
                 gradientColor="#000"
                 gradient
                 pauseOnHover

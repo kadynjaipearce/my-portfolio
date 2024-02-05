@@ -10,7 +10,7 @@ export default function Hero() {
     <Container>
       <div className="flex my-10 md:my-40 ">
         <div className="flex-grow">
-          <div className="font-bold text-[60px] md:text-8xl inter">
+          <div className="font-bold text-[60px] md:text-7xl inter">
             <span className="font-bold text-transparent inter bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
               Welcome,
             </span>{" "}
@@ -62,40 +62,47 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="flex-shrink-0 hidden mt-24 xl:mt-10 lg:block">
+        <div className=" hidden mt-24 md:mt-0 lg:block mr-16">
           <div className="relative w-96 h-96">
+            {/* Background blur */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] blur-[106px]"></div>
 
-            <Image
-              src={"/"}
-              alt=""
-              className="left-0 p-10 rounded-full"
-              width={1000}
-              height={1000}
-            />
+            {/* Centered Image */}
+            <div className="flex justify-center items-center h-full">
+              <Image
+                src={"/image.png"}
+                alt=""
+                className="rounded-full z-10 p-10"
+                width={1000}
+                height={1000}
+              />
+            </div>
 
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Logos surrounding the centered image */}
+            <div className="absolute inset-0 flex items-center justify-center ">
+              {/* Adjust positioning as needed */}
               <Image
                 src={"/typescript.svg"}
                 alt=""
                 width={500}
                 height={500}
-                className="absolute w-24 h-24 -top-10 -left-8"
-              ></Image>
+                className="absolute w-24 h-24 -top-4 -left-14"
+              />
               <Image
                 src={"/python.svg"}
                 alt=""
                 width={500}
                 height={500}
-                className="absolute right-0 w-24 h-24 top-20"
-              ></Image>
+                className="absolute w-24 h-24 -right-16"
+              />
               <Image
                 src={"/cpp.svg"}
                 alt=""
                 width={500}
                 height={500}
-                className="absolute w-24 h-24 -left-12 bottom-4"
-              ></Image>
+                className="absolute w-24 h-24 z-10 -left-14 -bottom-12"
+              />
+              {/* Add or remove logos here, adjusting position with top, right, bottom, left classes */}
             </div>
           </div>
         </div>

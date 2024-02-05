@@ -34,7 +34,7 @@ export default async function Experience() {
                 </span>
                 <Link
                   href={`/projects/${projects[0]?.slug}`}
-                  className="flex font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
+                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
                 >
                   Learn More <FaArrowRight className="mt-2 ml-2" />
                 </Link>
@@ -42,6 +42,7 @@ export default async function Experience() {
               <h3 className="text-3xl font-bold text-heading lg:text-4xl">
                 {projects[0].title}
               </h3>
+              <h2>{projects[0].createdAt.toString()}</h2>
               <p className="text-lg ">{projects[0].body.slice(0, 200)}...</p>
             </div>
           </div>
@@ -64,7 +65,7 @@ export default async function Experience() {
                 </span>
                 <Link
                   href={`/projects/${projects[1]?.slug}`}
-                  className="flex font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
+                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
                 >
                   Learn More <FaArrowRight className="mt-2 ml-2" />
                 </Link>
@@ -72,6 +73,7 @@ export default async function Experience() {
               <h3 className="text-3xl font-bold text-heading lg:text-4xl">
                 {projects[1].title}
               </h3>
+              <h2>{projects[0].createdAt.toString()}</h2>
               <p className="text-lg">{projects[1].body.slice(0, 200)}...</p>
             </div>
           </div>
