@@ -14,7 +14,8 @@ export default function Hero() {
             <span className="font-bold text-transparent inter bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
               Welcome,
             </span>{" "}
-            I&apos;m <br /> Kadyn-Jai Pearce, <br /> a Software Engineer.
+            I&apos;m <br className="hidden lg:inline-block" /> Kadyn-Jai Pearce,{" "}
+            <br /> a Software Engineer.
           </div>
 
           <div className="my-10 space-y-4">
@@ -67,10 +68,10 @@ export default function Hero() {
 
             <Image
               src={"/"}
-              layout="fill"
-              objectFit="cover"
               alt=""
               className="left-0 p-10 rounded-full"
+              width={1000}
+              height={1000}
             />
 
             <div className="absolute inset-0 flex items-center justify-center">

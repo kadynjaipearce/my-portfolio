@@ -15,19 +15,11 @@ export default async function Experience() {
   return (
     <Container>
       <div>
-        <div className="my-40 space-y-10">
-          <div className="text-center my-20">
-            <h2 className="mx-auto py-2 mt-4 text-center text-3xl tracking-tight text-heading md:max-w-4xl md:text-5xl font-bold text-transparent bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
-              Simplicity is key. Elevate your copy with a simple design.
-            </h2>
-            <p className="mt-6 text-xl text-text">
-              Here is a section with two features or points and a subheading.
-            </p>
-          </div>
+        <div className="my-20 space-y-10">
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
             <Link href={`/projects/${projects[0]?.slug}`} className="max-w-lg">
               <Image
-                src="/hhh.webp"
+                src="/complier.webp"
                 alt=""
                 className="w-full rounded-xl"
                 width={10000}
@@ -50,16 +42,14 @@ export default async function Experience() {
               <h3 className="text-3xl font-bold text-heading lg:text-4xl">
                 {projects[0].title}
               </h3>
-              <p className="text-lg font-medium">
-                {projects[0].body.slice(0, 200)}...
-              </p>
+              <p className="text-lg ">{projects[0].body.slice(0, 200)}...</p>
             </div>
           </div>
 
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <Link href={`/projects/${projects[1]?.slug}`} className="max-w-lg">
               <Image
-                src="/skibidi.png"
+                src="/blockchain.webp"
                 alt=""
                 className="w-full rounded-xl"
                 width={10000}
@@ -82,9 +72,7 @@ export default async function Experience() {
               <h3 className="text-3xl font-bold text-heading lg:text-4xl">
                 {projects[1].title}
               </h3>
-              <p className="text-lg font-medium">
-                {projects[1].body.slice(0, 200)}...
-              </p>
+              <p className="text-lg">{projects[1].body.slice(0, 200)}...</p>
             </div>
           </div>
         </div>
