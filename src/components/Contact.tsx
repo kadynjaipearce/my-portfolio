@@ -7,18 +7,11 @@ export default function Contact() {
       <div className="my-20">
         <section className="p-8 md:py-20 bg-neutral-50">
           <div className="rounded-4xl mx-auto flex max-w-6xl flex-col items-center text-center sm:bg-layer-2 sm:py-12 sm:px-6 md:py-18 lg:px-32 2xl:px-64">
-            <span className="text-sm font-semibold uppercase tracking-wide text-fuchsia-400">
-              14-day free trial
-            </span>
-
             <h2 className="mt-6 text-3xl font-semibold text-heading md:text-4xl">
-              Try it today, no credit card required!
+              Want to Employ me?
             </h2>
 
-            <p className="mt-4 text-lg font-medium">
-              Totally free for 14 days. Just sign up and start creating in
-              seconds.
-            </p>
+            <p className="mt-4 text-lg font-medium"></p>
 
             <form className="mt-8 flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
               <div>

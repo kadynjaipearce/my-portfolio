@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
 import prisma from "@/lib/utils";
-import Image from "next/image";
 
 export default async function Page({
   params,

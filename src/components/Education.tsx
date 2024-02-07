@@ -2,13 +2,12 @@ import React from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
-import { LuGraduationCap } from "react-icons/lu";
 
 export default function Education() {
   return (
     <Container>
       <div className="mt-40">
-        <div className="flex py-24 md:flex-row flex-col items-center bg-neutral-50 rounded-3xl p-10">
+        <div className="flex py-10 lg:py-24 md:flex-row flex-col items-center bg-neutral-50 rounded-3xl p-10">
           <div className="lg:max-w-lg lg:w-full md:w-1/2">
             <Image
               alt="Edith Cowan University Svg"
@@ -20,12 +19,12 @@ export default function Education() {
           <div className="lg:flex-grow md:w-1/2 mt-6 flex flex-col md:items-start md:text-left items-center text-center">
             <div className="w-full flex-col xl:flex xl:flex-row justify-between items-center">
               <div className="">
-                <h1 className="sm:text-4xl text-3xl font-bold text-[#8885e7] flex-grow">
+                <h1 className="sm:text-4xl text-lg font-bold text-[#8885e7] flex-grow">
                   Edith Cowan University{" "}
                   <br className="hidden lg:inline-block" />
                   Bachelor of Computer Science
                 </h1>
-                <h3 className="font-semibold my-2">
+                <h3 className="font-semibold my-2 text-sm">
                   Major: Software Engineering
                 </h3>
               </div>
@@ -34,7 +33,7 @@ export default function Education() {
                 July 2024 - 2027
               </h1>
             </div>
-            <p className="mb-8 leading-relaxed text-[#00172a]">
+            <p className="mb-8 leading-relaxed text-[#00172a] text-es">
               In July 2024, I will embark on my university journey, which will
               deepen my understanding of complex software engineering concepts
               and provide me with practical experience in collaborative project

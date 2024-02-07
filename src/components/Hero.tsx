@@ -10,54 +10,82 @@ export default function Hero() {
     <Container>
       <div className="flex my-10 md:my-40 ">
         <div className="flex-grow">
-          <div className="font-bold text-[60px] md:text-7xl inter">
-            <span className="font-bold text-transparent inter bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] bg-clip-text">
-              Welcome,
-            </span>{" "}
-            I&apos;m <br className="hidden lg:inline-block" /> Kadyn-Jai Pearce,{" "}
-            <br /> a Software Engineer.
+          <div className="relative w-4/5 overflow-hidden rounded-lg bg-gray-700 border border-gray-800">
+            <div className="flex items-center justify-between px-4 py-2 bg-gray-700 border-b border-gray-800">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
+                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
+                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
+              </div>
+            </div>
+            <div className="px-4 py-2">
+              <pre className="text-xs font-mono text-white overflow-x-auto">
+                <code className="language-cpp">
+                  {`#include <iostream>
+
+class Person {
+private:
+    std::string name;
+    int age;
+    std::string about;
+    std::vector<std::string> hobbies;
+};
+
+int main() {
+    // Create a Person object
+    Person person("John Doe", 30, "Software Engineer", {"Reading", "Traveling", "Coding"});
+
+    // Display person information
+    person.displayInfo();
+
+    return 0;
+}`}
+                </code>
+              </pre>
+            </div>
           </div>
 
           <div className="my-10 space-y-4">
-            <div className="flex items-center space-x-6">
-              <HiOutlineLocationMarker className="text-2xl" />
-
-              <div className="p-[1.5px] py-4 bg-black rounded-full dark:bg-white"></div>
-              <div className="font-medium ">Perth, Australia</div>
-            </div>
-
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center justify-center w-6 h-6">
-                <span className="relative flex w-3 h-3">
-                  <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
-                  <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
-                </span>
+            <div className="flex space-x-5">
+              <div className="flex items-center space-x-6">
+                <HiOutlineLocationMarker className="text-2xl" />
+                <div className="font-medium ">Perth, Australia</div>
               </div>
 
-              <div className="p-[1.5px] py-4 bg-black rounded-full dark:bg-white"></div>
-              <div className="font-medium">Available to Work.</div>
-            </div>
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center justify-center w-6 h-6">
+                  <span className="relative flex w-3 h-3">
+                    <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
+                    <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
+                  </span>
+                </div>
 
-            <div className="flex space-x-5 text-3xl">
+                <div className="font-medium">Available to Work.</div>
+              </div>
               <Link
                 href="https://github.com/kadynjaipearce"
-                className="hover:bg-gray-200 rounded-full p-1"
+                className="flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm"
               >
-                <RiGithubLine />
+                <RiGithubLine className="mr-2 text-lg" /> <h1>Github</h1>
               </Link>
 
               <Link
                 href="https://www.instagram.com/kadynpearce/"
-                className="hover:bg-gray-200 rounded-full p-1"
+                className="flex p-1 items-center rounded-full border-2 border-pink-200 bg-pink-200 px-2 text-sm font-semibold text-pink-600 shadow-sm"
               >
-                <RiInstagramLine className="" />
+                <RiInstagramLine className="mr-2 text-lg" /> <h1>Instagram</h1>
               </Link>
 
               <Link
                 href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
-                className="hover:bg-gray-200 rounded-full p-1"
+                className="flex p-1 items-center rounded-full border-2 border-blue-200 bg-blue-200 px-2 text-sm font-semibold text-blue-600 shadow-sm"
               >
-                <RiLinkedinFill className="" />
+                <RiLinkedinFill className="mr-2 text-lg" /> <h1>Linkedin</h1>
               </Link>
             </div>
           </div>
