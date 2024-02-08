@@ -1,8 +1,9 @@
 import React from "react";
-import Image from "next/image";
+
 import prisma from "../../lib/utils";
-import Link from "next/link";
+
 import Container from "@/components/Container";
+import Blogpost from "@/components/Blogpost";
 
 export const metadata = {
   title: "projects",
@@ -18,7 +19,18 @@ export default async function page() {
 
   return (
     <Container>
-      <div></div>
+      <div className="my-20">
+        <div className=" flex justify-between">
+          <div className="space-y-6">
+            <h1 className="text-7xl font-bold">Projects</h1>
+            <h2>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestias, provident.
+            </h2>
+          </div>
+        </div>
+        <Blogpost data={projects} />
+      </div>
     </Container>
   );
 }
