@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import Container from "@/components/Container";
 import { useSearchParams } from "next/navigation";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
+
+import Link from "next/link";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -38,130 +42,118 @@ export default function Page() {
   };
   return (
     <Container>
-      <section className="flex items-center justify-center h-screen">
-        <div className="container px-5 mx-auto">
-          <div className="flex flex-col w-full mb-12 text-center">
-            <h1 className="mb-4 text-5xl font-bold text-gray-900 inter sm:text-7xl ">
-              Want to work together?
-            </h1>
-            <p className="mx-auto text-base leading-relaxed lg:w-2/3 inter">
-              Send me a email below and ill try to reply as soon as possible.
-              spam will be ignored
+      <div className="flex items-center my-40">
+        <div className="flex flex-col md:flex-row items-center gap-16 bg-neutral-100 p-10 rounded-xl">
+          <div>
+            <h1 className="text-7xl font-bold text-neutral-900">Contact Me</h1>
+            <hr className="my-5" />
+            <p className="mt-3 text-neutral-800 font-semibold text-2xl">
+              Interested in collaborating? Have a job opportunity? or just want
+              to ask me a question? I&apos;d love to hear from you.
             </p>
-          </div>
-          <div className="mx-auto lg:w-1/2 md:w-2/3">
-            <div className="flex flex-wrap -m-2">
-              <div className="w-1/2 p-2">
-                <div className="relative">
-                  <label className="text-sm leading-7 text-gray-600">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={data.name}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                  />
-                </div>
+            <div className="space-y-4 my-10 text-gray-900 lg:max-w-[200px] ">
+              <div className="space-x-6 flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm">
+                <HiOutlineLocationMarker className="text-2xl text-gray-950" />
+                <div className="font-medium ">Perth, Australia</div>
               </div>
-              <div className="w-1/2 p-2">
-                <div className="relative">
-                  <label className="text-sm leading-7 text-gray-600">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={data.email}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                  />
+
+              <div className="space-x-6 flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm">
+                <div className="flex items-center justify-center w-6 h-6">
+                  <span className="relative flex w-3 h-3">
+                    <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
+                    <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
+                  </span>
                 </div>
+
+                <div className="font-medium">Available to Work.</div>
               </div>
-              <div className="w-full p-2">
-                <div className="relative">
-                  <label className="text-sm leading-7 text-gray-600">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={data.message}
-                    onChange={handleInputChange}
-                    className="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
-                  ></textarea>
-                </div>
-              </div>
-              <div className="w-full p-2">
-                <button
-                  className="flex px-8 py-2 mx-auto text-lg text-white bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600"
-                  onClick={handleSendEmail}
+            </div>
+            <div>
+              <div className="flex space-x-5 text-3xl">
+                <Link
+                  href="https://github.com/kadynjaipearce"
+                  className="hover:bg-gray-200 rounded-full p-1"
                 >
-                  Button
-                </button>
-              </div>
-              <div className="w-full p-2 pt-8 mt-8 text-center border-t border-gray-200">
-                <a className="text-indigo-500">example@email.com</a>
-                <p className="my-5 leading-normal">
-                  49 Smith St.
-                  <br />
-                  Saint Cloud, MN 56301
-                </p>
-                <span className="inline-flex">
-                  <a className="text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect
-                        width="20"
-                        height="20"
-                        x="2"
-                        y="2"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                    </svg>
-                  </a>
-                </span>
+                  <RiGithubLine />
+                </Link>
+
+                <Link
+                  href="https://www.instagram.com/kadynpearce/"
+                  className="hover:bg-gray-200 rounded-full p-1"
+                >
+                  <RiInstagramLine className="" />
+                </Link>
+
+                <Link
+                  href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
+                  className="hover:bg-gray-200 rounded-full p-1"
+                >
+                  <RiLinkedinFill className="" />
+                </Link>
               </div>
             </div>
           </div>
+          <div className="bg-neutral-100 p-6 rounded-lg">
+            <h1 className="text-3xl font-bold">Send Me a Message :)</h1>
+            <form className="mt-7 space-y-4" onSubmit={handleSendEmail}>
+              <input
+                name="name"
+                type="text"
+                placeholder="Name"
+                className="w-full rounded-md py-3 px-4 text-sm outline-gray-900"
+                value={data.name}
+                onChange={handleInputChange}
+              />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                className="w-full rounded-md py-3 px-4 text-sm outline-gray-900"
+                value={data.email}
+                onChange={handleInputChange}
+              />
+              <input
+                name="subject"
+                type="text"
+                placeholder="Subject"
+                className="w-full rounded-md py-3 px-4 text-sm outline-gray-900"
+                value={data.name}
+                onChange={handleInputChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows={6}
+                className="w-full rounded-md px-4 text-sm pt-3 outline-gray-900"
+                value={data.message}
+                onChange={handleInputChange}
+              ></textarea>
+              <button
+                onClick={handleSendEmail}
+                type="button"
+                className="text-white bg-blue-500 hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  fill="#fff"
+                  className="mr-2"
+                  viewBox="0 0 548.244 548.244"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                    clip-rule="evenodd"
+                    data-original="#000000"
+                  />
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
-      </section>
+      </div>
     </Container>
   );
 }

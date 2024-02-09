@@ -26,6 +26,7 @@ export interface BlogData {
   category: string;
   githubUrl: string;
   websiteUrl: string;
+  techStack: string[];
   createdAt: Date;
 }
 

@@ -41,10 +41,10 @@ export default function Blogcard({ data, type }: BlogpostProps) {
                       <h1 className="font-bold">{item.title}</h1>
                       <div className="flex space-x-1 md:space-x-4 -mt-2  lg:mt-0">
                         <Link href={item?.githubUrl}>
-                          <RiGithubLine className="hover:bg-gray-200 rounded-full p-2 text-[45px] ease-in-out duration-200" />
+                          <RiGithubLine className="text-[45px] ease-in-out duration-200 hover:scale-110 p-2" />
                         </Link>
                         <Link href={item?.slug}>
-                          <RiExternalLinkLine className="hover:bg-gray-200 rounded-full p-2 text-[45px] ease-in-out duration-200" />
+                          <RiExternalLinkLine className="text-[45px] ease-in-out duration-200 hover:scale-110 p-2" />
                         </Link>
                       </div>
                     </div>

@@ -6,7 +6,7 @@ import Marquees from "@/components/Marquee";
 
 export default function Home() {
   return (
-    <main className="dark:text-white dark:bg-black">
+    <main>
       <Hero />
       <Marquees />
       <Education />

@@ -12,6 +12,7 @@
     "@prisma/client": "^5.4.2",
     "@tailwindcss/typography": "^0.5.10",
     "cors": "^2.8.5",
+    "highlight.js": "^11.9.0",
     "next": "14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18",

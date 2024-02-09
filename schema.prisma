@@ -16,7 +16,8 @@ model Post {
   category String
   githubUrl String
   websiteUrl String
-  createdAt     DateTime  @default(now())
+  techStack  String[]
+  createdAt  DateTime  @default(now())
 }
 
 model Project {
@@ -26,8 +27,9 @@ model Project {
   title    String
   body     String
   category String
-  githubUrl     String
-  websiteUrl      String
-  createdAt     DateTime  @default(now())
+  githubUrl  String
+  websiteUrl String
+  techStack  String[]
+  createdAt  DateTime  @default(now())
 }
 

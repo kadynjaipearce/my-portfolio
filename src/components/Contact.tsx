@@ -23,9 +23,9 @@ export default function Contact() {
   return (
     <Container>
       <div className="my-20">
-        <section className="p-8 md:py-20 bg-neutral-50">
+        <section className="p-8 md:py-20 bg-neutral-50 rounded-xl">
           <div className=" mx-auto flex max-w-6xl flex-col items-center text-center sm:bg-layer-2 sm:py-12 sm:px-6 md:py-18 lg:px-32 2xl:px-64">
-            <h2 className="mt-6 text-3xl font-semibold text-heading md:text-4xl">
+            <h2 className="mt-6 text-3xl font-bold text-heading md:text-4xl">
               Want to work together?
             </h2>
 
@@ -56,9 +56,9 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="inline-flex cursor-pointer items-center justify-center rounded-xl border-2 border-blue-500 bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:border-primary-accent hover:bg-primary-accent focus:outline-none focus:ring-2 focus:ring-orange-400/80 focus:ring-offset-0 disabled:opacity-30 disabled:hover:border-primary disabled:hover:bg-primary disabled:hover:text-white dark:focus:ring-white/80"
+                className="inline-flex cursor-pointer items-center justify-center rounded-xl border-2 border-blue-500 bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:border-primary-accent hover:bg-primary-accent focus:outline-none focus:ring-2 focus:ring-orange-400/80 focus:ring-offset-0 disabled:opacity-30 disabled:hover:border-primary disabled:hover:bg-primary disabled:hover:text-white"
               >
-                Button
+                redirect
               </button>
             </form>
           </div>

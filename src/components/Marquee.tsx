@@ -29,7 +29,7 @@ export default function Marquees() {
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/nodejs.svg"
-              className="w-auto h-20 mx-auto"
+              className="w-auto h-16 mx-auto -mt-5"
               alt="client logo"
               width={1000}
               height={1000}
@@ -51,7 +51,7 @@ export default function Marquees() {
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/git.svg"
-              className="w-auto h-20 mx-auto"
+              className="w-auto h-16 mx-auto"
               alt="client logo"
               width={1000}
               height={1000}
@@ -62,7 +62,7 @@ export default function Marquees() {
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/react.svg"
-              className="w-auto h-20 mx-auto"
+              className="w-auto h-24 mx-auto"
               alt="client logo"
               width={1000}
               height={1000}
@@ -84,7 +84,7 @@ export default function Marquees() {
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/openai.svg"
-              className="w-auto h-20 mx-auto"
+              className="w-auto h-14 mx-auto"
               alt="client logo"
               width={1000}
               height={1000}

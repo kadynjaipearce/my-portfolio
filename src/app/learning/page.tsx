@@ -17,7 +17,7 @@ export default async function page() {
 
   return (
     <Container>
-      <div className="my-20">
+      <div className="my-20 min-h-screen">
         <div className=" flex justify-between">
           <div className="space-y-6">
             <h1 className="text-7xl font-bold">Learning</h1>
