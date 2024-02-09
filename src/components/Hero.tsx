@@ -1,72 +1,36 @@
 import Link from "next/link";
 import React from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
+import {
+  RiGithubLine,
+  RiInstagramLine,
+  RiLinkedinBoxFill,
+} from "react-icons/ri";
 import Container from "./Container";
 import Image from "next/image";
 
 export default function Hero() {
   return (
     <Container>
-      <div className="flex my-10 md:my-40 ">
-        <div className="flex-grow">
-          <div className="relative w-4/5 overflow-hidden rounded-lg bg-gray-700 border border-gray-800">
-            <div className="flex items-center justify-between px-4 py-2 bg-gray-700 border-b border-gray-800">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
-                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
-                <div className="w-3 h-3 bg-gray-900 rounded-full"></div>
-              </div>
-            </div>
-            <div className="px-4 py-2">
-              <pre className="text-xs font-mono text-white overflow-x-auto">
-                <code className="language-cpp">
-                  {`#include <iostream>
-
-class Person {
-private:
-    std::string name;
-    int age;
-    std::string about;
-    std::vector<std::string> hobbies;
-};
-
-int main() {
-    // Create a Person object
-    Person person("John Doe", 30, "Software Engineer", {"Reading", "Traveling", "Coding"});
-
-    // Display person information
-    person.displayInfo();
-
-    return 0;
-}`}
-                </code>
-              </pre>
-            </div>
+      <div className="flex my-10 md:my-40 gap-10">
+        <div className="flex-grow w-3/5">
+          <div className=" text-center lg:text-left">
+            <h1 className="text-7xl lg:text-8xl font-bold text-gray-950">
+              Hi, I&apos;m Kadyn-Jai Pearce a software engineer
+            </h1>
+            <hr className="mt-10" />
+            <h2 className="mt-7 text-gray-900 font-medium">
+              I&apos;m a computer science student at Edith Cowan University,
+              proficient in web development with a growing interest in low-level
+              programming and AI. Besides coding, I enjoy gaming, reading, and
+              kickboxing, which enhance my problem-solving skills and
+              discipline. Passionate about using technology for innovation,
+              I&apos;m keen to work on challenging and exciting projects.
+            </h2>
           </div>
 
-          <div className="my-10 space-y-4">
-            <div className="flex space-x-5">
-              <div className="flex items-center space-x-6">
-                <HiOutlineLocationMarker className="text-2xl" />
-                <div className="font-medium ">Perth, Australia</div>
-              </div>
-
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center justify-center w-6 h-6">
-                  <span className="relative flex w-3 h-3">
-                    <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
-                    <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
-                  </span>
-                </div>
-
-                <div className="font-medium">Available to Work.</div>
-              </div>
+          <div className="my-5">
+            <div className="flex gap-3 flex-wrap justify-center lg:justify-start">
               <Link
                 href="https://github.com/kadynjaipearce"
                 className="flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm"
@@ -76,7 +40,7 @@ int main() {
 
               <Link
                 href="https://www.instagram.com/kadynpearce/"
-                className="flex p-1 items-center rounded-full border-2 border-pink-200 bg-pink-200 px-2 text-sm font-semibold text-pink-600 shadow-sm"
+                className="flex p-1 items-center rounded-full border-2 border-violet-200 bg-violet-200 px-2 text-sm font-semibold text-violet-600 shadow-sm"
               >
                 <RiInstagramLine className="mr-2 text-lg" /> <h1>Instagram</h1>
               </Link>
@@ -85,52 +49,53 @@ int main() {
                 href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
                 className="flex p-1 items-center rounded-full border-2 border-blue-200 bg-blue-200 px-2 text-sm font-semibold text-blue-600 shadow-sm"
               >
-                <RiLinkedinFill className="mr-2 text-lg" /> <h1>Linkedin</h1>
+                <RiLinkedinBoxFill className="mr-2 text-lg" /> <h1>Linkedin</h1>
               </Link>
+            </div>
+
+            <div className="space-y-4 my-10 text-gray-900 lg:max-w-[200px] ">
+              <div className="space-x-6 flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm">
+                <HiOutlineLocationMarker className="text-2xl text-gray-950" />
+                <div className="font-medium ">Perth, Australia</div>
+              </div>
+
+              <div className="space-x-6 flex p-1 items-center rounded-full border-2 border-neutral-200 bg-neutral-200 px-2 text-sm font-semibold text-neutral-600 shadow-sm">
+                <div className="flex items-center justify-center w-6 h-6">
+                  <span className="relative flex w-3 h-3">
+                    <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
+                    <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
+                  </span>
+                </div>
+
+                <div className="font-medium">Available to Work.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div className=" hidden mt-24 md:mt-0 lg:block mr-16">
-          <div className="relative w-96 h-96">
-            {/* Background blur */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3EA7C9] to-[#CA11E8] blur-[106px]"></div>
-
-            {/* Centered Image */}
-            <div className="flex justify-center items-center h-full">
-              <Image
-                src={"/image.png"}
-                alt=""
-                className="rounded-full z-10 p-10"
-                width={1000}
-                height={1000}
-              />
-            </div>
-
-            {/* Logos surrounding the centered image */}
-            <div className="absolute inset-0 flex items-center justify-center ">
-              {/* Adjust positioning as needed */}
-              <Image
-                src={"/typescript.svg"}
-                alt=""
-                width={500}
-                height={500}
-                className="absolute w-24 h-24 -top-4 -left-14"
-              />
-              <Image
-                src={"/python.svg"}
-                alt=""
-                width={500}
-                height={500}
-                className="absolute w-24 h-24 -right-16"
-              />
-              <Image
-                src={"/cpp.svg"}
-                alt=""
-                width={500}
-                height={500}
-                className="absolute w-24 h-24 z-10 -left-14 -bottom-12"
-              />
-              {/* Add or remove logos here, adjusting position with top, right, bottom, left classes */}
+        <div className="w-2/5 hidden lg:block">
+          <div>
+            <div className="bg-gray-900 text-white p-4 rounded-lg shadow-lg w-full h-[580px]">
+              {/* Mimic of a macOS window toolbar */}
+              <div className="flex justify-between mb-4">
+                <div className="flex space-x-2">
+                  {/* Window controls */}
+                  <div className="w-3 h-3 bg-gray-950 hover:bg-red-500 rounded-full hover:cursor-pointer ease-in-out duration-200"></div>
+                  <div className="w-3 h-3 bg-gray-950 hover:bg-yellow-500 rounded-full hover:cursor-pointer ease-in-out duration-200"></div>
+                  <div className="w-3 h-3 bg-gray-950 hover:bg-green-500 rounded-full hover:cursor-pointer ease-in-out duration-200"></div>
+                </div>
+              </div>
+              {/* Content area */}
+              <div>
+                <pre>
+                  <code>
+                    {`class Person
+{
+  public:
+    name: "Kadyn-Jai Pearce"
+}`}
+                  </code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>

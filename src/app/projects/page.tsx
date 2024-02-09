@@ -3,7 +3,7 @@ import React from "react";
 import prisma from "../../lib/utils";
 
 import Container from "@/components/Container";
-import Blogpost from "@/components/Blogpost";
+import Blogcard from "@/components/Blogcard";
 
 export const metadata = {
   title: "projects",
@@ -29,7 +29,7 @@ export default async function page() {
             </h2>
           </div>
         </div>
-        <Blogpost data={projects} />
+        <Blogcard data={projects} type="projects" />
       </div>
     </Container>
   );

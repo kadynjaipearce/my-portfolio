@@ -1,6 +1,7 @@
 import React from "react";
 import prisma from "../../lib/utils";
 import Container from "@/components/Container";
+import Blogcard from "@/components/Blogcard";
 
 export const metadata = {
   title: "projects",
@@ -16,7 +17,24 @@ export default async function page() {
 
   return (
     <Container>
-      <div></div>
+      <div className="my-20">
+        <div className=" flex justify-between">
+          <div className="space-y-6">
+            <h1 className="text-7xl font-bold">Learning</h1>
+            <h2>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestias, provident.
+            </h2>
+          </div>
+        </div>
+        {!blogPosts[0] ? (
+          <div className="text-5xl text-center items-center font-bold">
+            There are no posts
+          </div>
+        ) : (
+          <Blogcard data={blogPosts} type="learning" />
+        )}
+      </div>
     </Container>
   );
 }

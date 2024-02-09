@@ -42,9 +42,6 @@ export default function Education() {
             </p>
           </div>
         </div>
-        <div className="h-1 bg-gray-200 rounded overflow-hidden mt-20">
-          <div className="w-24 h-full bg-[#3ea7c9]"></div>
-        </div>
       </div>
     </Container>
   );

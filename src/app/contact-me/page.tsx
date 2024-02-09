@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Container from "@/components/Container";
+import { useSearchParams } from "next/navigation";
 
 export default function Page() {
+  const searchParams = useSearchParams();
+  const userEmail = searchParams.get("email");
+
   const [data, setData] = useState({
     name: "",
-    email: "",
+    email: userEmail ?? "",
     message: "",
   });
 

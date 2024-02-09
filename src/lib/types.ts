@@ -16,3 +16,20 @@ export interface RequestBody {
     message: string;
   };
 }
+
+export interface BlogData {
+  id: string;
+  slug: string;
+  img: string;
+  title: string;
+  body: string;
+  category: string;
+  githubUrl: string;
+  websiteUrl: string;
+  createdAt: Date;
+}
+
+export interface BlogpostProps {
+  data: BlogData[];
+  type: string;
+}

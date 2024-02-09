@@ -6,15 +6,24 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const body: RequestBody = await request.json();
     const { name, email, message } = body.data;
-    console.log("Name: ", name, "Email: ", email, "Message: ", message);
 
     if (!name || !email || !message) {
       return new NextResponse("Missing Data", { status: 400 });
     }
 
     if (!validator.isEmail(email)) {
+      console.log(
+        "Name: ",
+        name,
+        "Invalid Email: ",
+        email,
+        "Message: ",
+        message
+      );
       return new NextResponse("Invalid Email", { status: 400 });
     }
+
+    console.log("Name: ", name, "Valid Email: ", email, "Message: ", message);
 
     // TODO check name & message input size
     // TODO send email to self and user: email
