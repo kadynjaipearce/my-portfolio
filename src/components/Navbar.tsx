@@ -9,7 +9,7 @@ const navItems: navItemTypes[] = [
   { title: "/Home", url: "/" },
   { title: "/Projects", url: "/projects" },
   { title: "/Learning", url: "/learning" },
-  { title: "/Contact-Me", url: "/contact-me" },
+  { title: "/Contact-Me", url: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -88,7 +88,7 @@ export default function Navbar() {
             </div>
             <Link
               href={"/api/download"}
-              className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded bg-gradient-to-r from-blue-500 to-purple-500 block lg:inline-block lg:link-button`}
+              className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded bg-gradient-to-r from-blue-400 to-purple-500 block lg:inline-block lg:link-button`}
             >
               <span className="flex w-full lg:w-auto px-4 lg:px-4 py-[4px] lg:py-[4px] text-white bg-black rounded">
                 Download My Resume <HiDownload className="mt-[7px] lg:ml-2" />

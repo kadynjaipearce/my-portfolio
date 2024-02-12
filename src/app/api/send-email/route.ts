@@ -1,11 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import validator from "validator";
 import { RequestBody } from "@/lib/types";
+import { Resend } from "resend";
+import { EmailTemplate } from "@/components/EmailTemplate";
 
-export async function POST(request: NextRequest): Promise<NextResponse> {
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function POST(request: NextRequest) {
   try {
     const body: RequestBody = await request.json();
-    const { name, email, message } = body.data;
+    const { name, email, subject, message } = body.data;
 
     if (!name || !email || !message) {
       return new NextResponse("Missing Data", { status: 400 });
@@ -23,12 +27,17 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return new NextResponse("Invalid Email", { status: 400 });
     }
 
-    console.log("Name: ", name, "Valid Email: ", email, "Message: ", message);
+    const data = await resend.emails.send({
+      from: "Acme <onboarding@resend.dev>",
+      to: email,
+      subject: subject,
+      react: EmailTemplate({
+        firstName: name,
+        message: message,
+      }) as React.ReactElement,
+    });
 
-    // TODO check name & message input size
-    // TODO send email to self and user: email
-
-    return new NextResponse("Success", { status: 200 });
+    return Response.json({ success: true, data });
   } catch (error) {
     console.log(error);
     return new NextResponse(`${error}`, {

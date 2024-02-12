@@ -13,6 +13,7 @@ export interface RequestBody {
   data: {
     name: string;
     email: string;
+    subject: string;
     message: string;
   };
 }

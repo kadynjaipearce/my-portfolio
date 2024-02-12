@@ -8,7 +8,7 @@ export default function Education() {
     <Container>
       <div className="mt-40">
         <div className="flex py-10 lg:py-24 md:flex-row flex-col items-center bg-neutral-50 rounded-3xl p-10">
-          <div className="lg:max-w-lg lg:w-full md:w-1/2">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 mt-4 lg:mt-0">
             <Image
               alt="Edith Cowan University Svg"
               src="/ecu.svg"

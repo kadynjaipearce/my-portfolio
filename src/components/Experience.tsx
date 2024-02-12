@@ -4,6 +4,7 @@ import prisma from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import Category from "./Category";
 
 export default async function Experience() {
   const projects = await prisma.project.findMany({
@@ -11,6 +12,13 @@ export default async function Experience() {
       createdAt: "asc",
     },
   });
+
+  type CategoryName =
+    | "Software Engineering"
+    | "Web Development"
+    | "Blockchain Development"
+    | "Other"
+    | "entertainment";
 
   return (
     <Container>
@@ -29,21 +37,21 @@ export default async function Experience() {
 
             <div className="space-y-6 text-left max-w-3xl">
               <div className="flex justify-between">
-                <span className="inline-flex items-center rounded-full border-2 border-blue-200 bg-blue-200 px-2 py-1 text-sm font-semibold text-blue-600 shadow-sm">
-                  {projects[0].category}
-                </span>
+                <Category category={projects[0].category as CategoryName} />
                 <Link
                   href={`/projects/${projects[0]?.slug}`}
-                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
+                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200 text-gray-950"
                 >
                   Learn More <FaArrowRight className="mt-2 ml-2" />
                 </Link>
               </div>
-              <h3 className="text-3xl font-bold text-heading lg:text-4xl">
+              <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
                 {projects[0].title}
               </h3>
-              <h2>{projects[0].createdAt.toString()}</h2>
-              <p className="text-lg ">{projects[0].body.slice(0, 200)}...</p>
+
+              <p className="text-lg lg:text-left text-center text-gray-950">
+                {projects[0].body.slice(0, 200)}...
+              </p>
             </div>
           </div>
 
@@ -60,21 +68,21 @@ export default async function Experience() {
 
             <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
-                <span className="inline-flex items-center rounded-full border-2 border-pink-200 bg-pink-200 px-2 py-1 text-sm font-semibold text-pink-600 shadow-sm">
-                  {projects[1].category}
-                </span>
+                <Category category={projects[1].category as CategoryName} />
                 <Link
                   href={`/projects/${projects[1]?.slug}`}
-                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200"
+                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200 text-gray-950"
                 >
                   Learn More <FaArrowRight className="mt-2 ml-2" />
                 </Link>
               </div>
-              <h3 className="text-3xl font-bold text-heading lg:text-4xl">
+              <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
                 {projects[1].title}
               </h3>
-              <h2>{projects[0].createdAt.toString()}</h2>
-              <p className="text-lg">{projects[1].body.slice(0, 200)}...</p>
+
+              <p className="text-lg lg:text-left text-center text-gray-950">
+                {projects[1].body.slice(0, 200)}...
+              </p>
             </div>
           </div>
         </div>

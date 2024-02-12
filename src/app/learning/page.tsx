@@ -1,7 +1,10 @@
 import React from "react";
 import prisma from "../../lib/utils";
 import Container from "@/components/Container";
-import Blogcard from "@/components/Blogcard";
+import Category from "@/components/Category";
+import { FaArrowRight } from "react-icons/fa";
+
+import Link from "next/link";
 
 export const metadata = {
   title: "projects",
@@ -15,25 +18,60 @@ export default async function page() {
     },
   });
 
+  type CategoryName =
+    | "Software Engineering"
+    | "Web Development"
+    | "Blockchain Development"
+    | "Other"
+    | "entertainment";
+
   return (
     <Container>
       <div className="my-20 min-h-screen">
         <div className=" flex justify-between">
           <div className="space-y-6">
-            <h1 className="text-7xl font-bold">Learning</h1>
+            <h1 className="lg:text-7xl font-bold text-4xl">Learning</h1>
             <h2>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Molestias, provident.
             </h2>
           </div>
         </div>
-        {!blogPosts[0] ? (
-          <div className="text-5xl text-center items-center font-bold">
-            There are no posts
+
+        <div className="py-24">
+          <div className="-my-8 divide-y-2 divide-gray-100">
+            {blogPosts.map((item) => {
+              return (
+                <div
+                  className="py-8 flex flex-wrap md:flex-nowrap"
+                  key={item.id}
+                >
+                  <div className="mb-6 flex-shrink-0 flex flex-col">
+                    <div className="lg:w-64 md:w-48">
+                      <Category category={item.category as CategoryName} />
+                    </div>
+                    <span className="mt-3 text-gray-900 text-sm lg:ml-2 font-semibold">
+                      {item.createdAt.toDateString()}
+                    </span>
+                  </div>
+                  <div className="md:flex-grow -mt-2">
+                    <h2 className="text-3xl font-bold text-gray-900 title-font mb-2">
+                      {item.title}
+                    </h2>
+                    <p className="font-medium">{item.body.slice(0, 350)}...</p>
+                    <Link
+                      href={`/learning/${item.slug}`}
+                      className="inline-flex items-center mt-4 leading-8 font-bold"
+                    >
+                      Learn More
+                      <FaArrowRight className="mt-[2px] ml-2" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        ) : (
-          <Blogcard data={blogPosts} type="learning" />
-        )}
+        </div>
       </div>
     </Container>
   );

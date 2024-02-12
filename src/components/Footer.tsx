@@ -17,21 +17,21 @@ export default function Footer() {
           <div className="flex space-x-5 text-3xl">
             <Link
               href="https://github.com/kadynjaipearce"
-              className="hover:scale-110 p-1 hover:text-gray-600"
+              className="hover:scale-110 p-1"
             >
               <RiGithubLine />
             </Link>
 
             <Link
               href="https://www.instagram.com/kadynpearce/"
-              className="hover:scale-110 p-1 hover:text-violet-900"
+              className="hover:scale-110 p-1"
             >
               <RiInstagramLine className="" />
             </Link>
 
             <Link
               href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
-              className="hover:scale-110 p-1 hover:text-blue-600"
+              className="hover:scale-110 p-1"
             >
               <RiLinkedinFill className="" />
             </Link>

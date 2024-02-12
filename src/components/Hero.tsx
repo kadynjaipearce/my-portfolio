@@ -1,20 +1,18 @@
 import Link from "next/link";
 import React from "react";
-import { HiOutlineLocationMarker } from "react-icons/hi";
 import {
   RiGithubLine,
   RiInstagramLine,
   RiLinkedinBoxFill,
 } from "react-icons/ri";
 import Container from "./Container";
-import Image from "next/image";
 import hljs from "highlight.js";
-import cpp from "highlight.js/lib/languages/cpp";
 import "highlight.js/styles/github-dark.css";
 
 export default function Hero() {
-  const code = "class Person\n{\n  public: \n    name: 'Kadyn-Jai Pearce'\n}";
-  const js = hljs.highlight(code, { language: "cpp" }).value;
+  const code =
+    "class Person\n{\n  public:\n    std::string name = 'Kadyn-Jai Pearce';\n    int age = 28;\n    std::string occupation = 'Software Developer';\n    std::string hobbies = 'Coding, Hiking, Photography';\n    std::string about = 'Passionate software developer with a love for...';\n\n    Person() {}\n\n    void displayAboutMe() {\n        std::cout << 'Name: ' << name << '\\n'\n                  << 'Age: ' << age << '\\n'\n                  << 'Occupation: ' << occupation << '\\n'\n                  << 'Hobbies: ' << hobbies << '\\n'\n                  << 'About: ' << about << std::endl;\n    }\n};";
+  const js = hljs.highlight(code, { language: "c++" }).value;
   return (
     <Container>
       <div className="flex my-10 md:mt-40 md:mb-20 gap-10">
@@ -27,8 +25,7 @@ export default function Hero() {
               </span>{" "}
               a software engineer
             </h1>
-            <div className="mt-10 w-full bg-gray-900 py-[1px] rounded-full" />
-            <h2 className="mt-7 text-gray-900 font-medium">
+            <h2 className="mt-7 text-gray-900 font-medium max-w-3xl">
               I&apos;m a computer science student at Edith Cowan University,
               proficient in web development with a growing interest in low-level
               programming and AI. Besides coding, I enjoy gaming, reading, and
