@@ -35,3 +35,8 @@ export interface BlogpostProps {
   data: BlogData[];
   type: string;
 }
+
+export type CategoryName =
+  | "Software Engineering"
+  | "Web Development"
+  | "Blockchain Development";

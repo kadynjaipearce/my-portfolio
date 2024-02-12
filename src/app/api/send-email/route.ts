@@ -16,14 +16,6 @@ export async function POST(request: NextRequest) {
     }
 
     if (!validator.isEmail(email)) {
-      console.log(
-        "Name: ",
-        name,
-        "Invalid Email: ",
-        email,
-        "Message: ",
-        message
-      );
       return new NextResponse("Invalid Email", { status: 400 });
     }
 

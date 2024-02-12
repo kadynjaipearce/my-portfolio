@@ -3,6 +3,7 @@ import prisma from "../../lib/utils";
 import Container from "@/components/Container";
 import Category from "@/components/Category";
 import { FaArrowRight } from "react-icons/fa";
+import { CategoryName } from "@/lib/types";
 
 import Link from "next/link";
 
@@ -17,13 +18,6 @@ export default async function page() {
       createdAt: "asc",
     },
   });
-
-  type CategoryName =
-    | "Software Engineering"
-    | "Web Development"
-    | "Blockchain Development"
-    | "Other"
-    | "entertainment";
 
   return (
     <Container>

@@ -17,10 +17,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white lg:bg-white/50  lg:backdrop-blur-xl border-b py-0 lg:py-2 ">
-      <div className="px-4 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
+      <div className="px-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
         <div className="items-center justify-between text-black lg:flex">
           <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
-            <div className="pl-0 sm:pl-4">
+            <div className="">
               $ {""}
               <Link
                 href={"/"}
@@ -88,7 +88,7 @@ export default function Navbar() {
             </div>
             <Link
               href={"/api/download"}
-              className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded bg-gradient-to-r from-blue-400 to-purple-500 block lg:inline-block lg:link-button`}
+              className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded-md bg-gradient-to-r from-blue-400 to-purple-500 block lg:inline-block lg:link-button`}
             >
               <span className="flex w-full lg:w-auto px-4 lg:px-4 py-[4px] lg:py-[4px] text-white bg-black rounded">
                 Download My Resume <HiDownload className="mt-[7px] lg:ml-2" />
