@@ -1,15 +1,7 @@
 import React from "react";
-
 import prisma from "../../lib/utils";
-
 import Container from "@/components/Container";
 import Blogcard from "@/components/Blogcard";
-import Link from "next/link";
-import {
-  RiGithubLine,
-  RiInstagramLine,
-  RiLinkedinBoxFill,
-} from "react-icons/ri";
 
 export const metadata = {
   title: "projects",
@@ -26,15 +18,16 @@ export default async function Page() {
   return (
     <Container>
       <div className="my-20 min-h-screen">
-        <div className=" flex justify-between">
-          <div className="space-y-6">
-            <h1 className="text-7xl font-bold ">Projects Portfolio</h1>
-            <div className="mt-10 w-full bg-gray-900 py-[1px] rounded-full" />
-            <h2 className="font-semibold">
-              Exploring the Horizon of Creativity and Technological Innovation
+        <div className="justify-between bg-neutral-100 w-full py-16 rounded-xl">
+          <div className="space-y-6 p-6">
+            <h1 className="lg:text-7xl font-bold text-4xl">Learning</h1>
+            <h2>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Molestias, provident.
             </h2>
           </div>
         </div>
+
         <Blogcard data={projects} type="projects" />
       </div>
     </Container>

@@ -10,20 +10,26 @@ export default function Page() {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // New loading state
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  async function handleSendEmail(e: any) {
-    e.preventDefault(); // Prevent form from submitting the traditional way
-    if (loading) return; // Prevent sending another email if already in process
+  async function handleSendEmail(e: React.FormEvent) {
+    e.preventDefault();
+    if (loading) return;
 
-    setLoading(true); // Start the loading process
+    setLoading(true);
+    setErrorMessage(""); // Reset error message state
     try {
-      const res = await fetch("http://localhost:3000/api/send-email", {
+      const res = await fetch("/api/send-email", {
+        // Use relative URL for API calls
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,22 +37,27 @@ export default function Page() {
         body: JSON.stringify({ data: data }),
       });
 
-      if (res.ok) {
-        setTimeout(() => {
-          setLoading(false);
+      const result = await res.json(); // Assuming your API returns JSON
 
-          setData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-        }, 1500);
+      if (!res.ok) {
+        throw new Error(result.message || "Failed to send email"); // Use server-provided message or a default one
       }
-    } catch (error) {
+
+      // If successful, reset form and possibly set success message
+      setData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error: unknown) {
       console.error(error);
+      setErrorMessage((error as Error).message);
+    } finally {
+      setLoading(false); // Ensure loading is always reset
     }
   }
+
   return (
     <section id="contact">
       <Container>
@@ -74,6 +85,11 @@ export default function Page() {
               </div>
             </div>
             <div className=" rounded-lg">
+              {errorMessage && (
+                <div className="text-red-500 text-center mb-5 font-semibold">
+                  {errorMessage}
+                </div>
+              )}
               <form className="space-y-4" onSubmit={handleSendEmail}>
                 <input
                   name="name"

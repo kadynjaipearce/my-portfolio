@@ -12,11 +12,17 @@ export async function POST(request: NextRequest) {
     const { name, email, subject, message } = body.data;
 
     if (!name || !email || !message) {
-      return new NextResponse("Missing Data", { status: 400 });
+      return NextResponse.json(
+        { success: false, message: "Missing required data" },
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     if (!validator.isEmail(email)) {
-      return new NextResponse("Invalid Email", { status: 400 });
+      return NextResponse.json(
+        { success: false, message: "Invalid email address" },
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
     }
 
     const data = await resend.emails.send({
@@ -29,11 +35,15 @@ export async function POST(request: NextRequest) {
       }) as React.ReactElement,
     });
 
-    return Response.json({ success: true, data });
+    return NextResponse.json(
+      { success: true, data },
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
   } catch (error) {
     console.log(error);
-    return new NextResponse(`${error}`, {
-      status: 469,
-    });
+    return NextResponse.json(
+      { success: false, message: "An unexpected error occurred" },
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }

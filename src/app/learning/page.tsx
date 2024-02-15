@@ -22,8 +22,8 @@ export default async function page() {
   return (
     <Container>
       <div className="my-20 min-h-screen">
-        <div className=" flex justify-between">
-          <div className="space-y-6">
+        <div className=" flex justify-between bg-neutral-100 w-full py-16 rounded-xl">
+          <div className="space-y-6 p-6">
             <h1 className="lg:text-7xl font-bold text-4xl">Learning</h1>
             <h2>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.

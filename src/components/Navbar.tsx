@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white lg:bg-white/50  lg:backdrop-blur-xl border-b py-0 lg:py-2 ">
-      <div className="px-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
+      <div className="pl-6 pr-3 lg:pr-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
         <div className="items-center justify-between text-black lg:flex">
           <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
             <div className="">
