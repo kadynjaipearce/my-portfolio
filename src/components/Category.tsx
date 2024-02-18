@@ -12,7 +12,7 @@ interface CategoryProps {
 }
 
 export default function Category({ category }: CategoryProps) {
-  const bgColorClass = categoryColors[category] || "bg-gray-500";
+  const bgColorClass = categoryColors[category] || "bg-gray-500 text-gray-800";
   return (
     <div
       className={`inline-flex items-center rounded-full border-2 px-2 py-1 text-sm font-semibold shadow-sm ${bgColorClass}`}

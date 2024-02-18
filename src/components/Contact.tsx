@@ -62,7 +62,7 @@ export default function Page() {
     <section id="contact">
       <Container mobileFull={true}>
         <div className="flex items-center mt-20 lg:mb-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-4 pt-10 lg:rounded-3xl py-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-6 pt-10 lg:rounded-3xl py-10 rounded-t-3xl">
             <div className="p-4">
               <h1 className="md:text-7xl text-5xl font-bold  text-center lg:text-left text-neutral-800">
                 Contact Me

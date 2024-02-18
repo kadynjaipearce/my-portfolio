@@ -12,22 +12,22 @@ body {
   padding: 0;
 }
 
-.containert {
+.container-custom {
   width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .containert {
+  .container-custom {
     max-width: 1280px;
   }
 }
 @media (min-width: 1280px) {
-  .containert {
+  .container-custom {
     max-width: 1280px;
   }
 }
 @media (min-width: 1536px) {
-  .containert {
+  .container-custom {
     max-width: 1536px;
   }
 }

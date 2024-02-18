@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
-import Container from "./Container";
+import Link from "next/link";
+import Container from "@/components/Container";
 import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
 
 export default function Footer() {
@@ -8,8 +8,8 @@ export default function Footer() {
     <footer className="py-4 border-t">
       <Container>
         <div className="mx-auto flex flex-col items-center justify-between space-y-4 lg:flex-row lg:space-y-0">
-          <div className="flex flex-col items-center space-x-0 space-y-4 lg:flex-row lg:space-x-14 lg:space-y-0">
-            <div className="pl-0 sm:pl-4 font-semibold">
+          <div className="flex flex-col items-center space-x-0 space-y-4 lg:flex-row lg:space-y-0">
+            <div className=" font-semibold text-center md:text-left">
               Developed By Kadyn-Jai Pearce &copy; {new Date().getFullYear()}
             </div>
           </div>

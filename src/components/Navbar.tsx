@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import NavItem from "./Navitem";
+import NavItem from "@/components/Navitem";
 import { HiDownload } from "react-icons/hi";
 import { navItemTypes } from "@/lib/types";
 
@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white lg:bg-white/50  lg:backdrop-blur-xl border-b py-0 lg:py-2 ">
-      <div className="pl-6 pr-3 lg:pr-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent containert">
+      <div className="pl-6 pr-3 lg:pr-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent container-custom">
         <div className="items-center justify-between text-black lg:flex">
           <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
             <div className="">

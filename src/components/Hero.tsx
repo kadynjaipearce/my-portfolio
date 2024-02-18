@@ -1,17 +1,17 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import Container from "@/components/Container";
+import hljs from "highlight.js";
 import {
   RiGithubLine,
   RiInstagramLine,
   RiLinkedinBoxFill,
 } from "react-icons/ri";
-import Container from "./Container";
-import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
 
 export default function Hero() {
   const code =
-    "class Person\n{\n  public:\n    std::string name = 'Kadyn-Jai Pearce';\n    int age = 28;\n    std::string occupation = 'Software Developer';\n    std::string hobbies = 'Coding, Hiking, Photography';\n    std::string about = 'Passionate software developer with a love for...';\n\n    Person() {}\n\n    void displayAboutMe() {\n        std::cout << 'Name: ' << name << '\\n'\n                  << 'Age: ' << age << '\\n'\n                  << 'Occupation: ' << occupation << '\\n'\n                  << 'Hobbies: ' << hobbies << '\\n'\n                  << 'About: ' << about << std::endl;\n    }\n};";
+    "class Person\n{\n  public:\n    std::string name = 'Kadyn-Jai Pearce';\n    int age = 28;\n    std::string occupation = 'Software Developer';\n    std::string hobbies = 'Coding, Hiking, Photography';\n    std::string about = 'Passionate software developer ';\n\n    Person() {}\n\n    void displayAboutMe() {\n        std::cout << 'Name: ' << name << '\\n'\n                  << 'Age: ' << age << '\\n'\n                  << 'Occupation: ' << occupation << '\\n'\n                  << 'Hobbies: ' << hobbies << '\\n'\n                  << 'About: ' << about << std::endl;\n    }\n};";
   const js = hljs.highlight(code, { language: "c++" }).value;
   return (
     <Container>

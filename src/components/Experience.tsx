@@ -1,10 +1,11 @@
 import React from "react";
-import Container from "./Container";
-import prisma from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
+import prisma from "@/lib/utils";
+import Category from "@/components/Category";
 import { FaArrowRight } from "react-icons/fa";
-import Category from "./Category";
+import { CategoryName } from "@/lib/types";
 
 export default async function Experience() {
   const projects = await prisma.project.findMany({
@@ -12,13 +13,6 @@ export default async function Experience() {
       createdAt: "asc",
     },
   });
-
-  type CategoryName =
-    | "Software Engineering"
-    | "Web Development"
-    | "Blockchain Development"
-    | "Other"
-    | "entertainment";
 
   return (
     <Container>

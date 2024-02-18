@@ -1,7 +1,7 @@
 import React from "react";
-import prisma from "../../lib/utils";
+import prisma from "@/lib/utils";
 import Container from "@/components/Container";
-import Blogcard from "@/components/Blogcard";
+import ProjectsRender from "@/components/ProjectsRender";
 
 export const metadata = {
   title: "projects",
@@ -17,8 +17,8 @@ export default async function Page() {
 
   return (
     <Container>
-      <div className="my-10 min-h-screen">
-        <div className="justify-between bg-neutral-100 w-full py-16 rounded-xl">
+      <div className="mb-10 lg:mt-10 min-h-screen">
+        <div className="justify-between  w-full py-16 lg:rounded-xl">
           <div className="space-y-6 p-6">
             <h1 className="lg:text-7xl font-bold text-4xl">
               🏗️ - My Personal Projects
@@ -32,7 +32,7 @@ export default async function Page() {
           </div>
         </div>
 
-        <Blogcard data={projects} type="projects" />
+        <ProjectsRender data={projects} type="projects" />
       </div>
     </Container>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import Container from "./Container";
+import Container from "@/components/Container";
 
 export default function Marquees() {
   return (

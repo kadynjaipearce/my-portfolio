@@ -1,11 +1,7 @@
 import React from "react";
-import prisma from "../../lib/utils";
+import prisma from "@/lib/utils";
 import Container from "@/components/Container";
-import Category from "@/components/Category";
-import { FaArrowRight } from "react-icons/fa";
-import { CategoryName } from "@/lib/types";
-
-import Link from "next/link";
+import BlogRender from "@/components/BlogRender";
 
 export const metadata = {
   title: "projects",
@@ -13,18 +9,18 @@ export const metadata = {
 };
 
 export default async function page() {
-  const blogPosts = await prisma.project.findMany({
+  const blogPosts = await prisma.post.findMany({
     orderBy: {
       createdAt: "asc",
     },
   });
 
   return (
-    <Container>
-      <div className="my-10 min-h-screen">
-        <div className=" flex justify-between bg-neutral-100 w-full lg:py-16 rounded-xl">
-          <div className="space-y-6 p-10">
-            <h1 className="lg:text-7xl font-bold text-3xl">
+    <Container mobileFull={true}>
+      <div className="mb-10 lg:mt-10 min-h-screen">
+        <div className="flex justify-between w-full py-16 lg:rounded-xl">
+          <div className="space-y-6 p-6">
+            <h1 className="lg:text-7xl font-bold text-4xl">
               ✏️ - My Learning Journey
             </h1>
             <h2 className="max-w-5xl">
@@ -34,42 +30,11 @@ export default async function page() {
               interested in the journey.
             </h2>
           </div>
+
+          <hr className="mt-10" />
         </div>
 
-        <div className="py-16">
-          <div className="-my-8 divide-y-2 divide-gray-100">
-            {blogPosts.map((item) => {
-              return (
-                <div
-                  className="py-8 flex flex-wrap md:flex-nowrap"
-                  key={item.id}
-                >
-                  <div className="mb-6 flex-shrink-0 flex flex-col">
-                    <div className="lg:w-64 md:w-48">
-                      <Category category={item.category as CategoryName} />
-                    </div>
-                    <span className="mt-3 text-gray-900 text-sm lg:ml-2 font-semibold">
-                      {item.createdAt.toDateString()}
-                    </span>
-                  </div>
-                  <div className="md:flex-grow -mt-2">
-                    <h2 className="text-3xl font-bold text-gray-900 title-font mb-2">
-                      {item.title}
-                    </h2>
-                    <p className="">{item.body.slice(0, 350)}...</p>
-                    <Link
-                      href={`/learning/${item.slug}`}
-                      className="inline-flex items-center mt-4 leading-8 font-bold"
-                    >
-                      Learn More
-                      <FaArrowRight className="mt-[2px] ml-2" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <BlogRender data={blogPosts} type="learning" />
       </div>
     </Container>
   );
