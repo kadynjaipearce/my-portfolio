@@ -6,10 +6,11 @@ import Category from "@/components/Category";
 import { BlogpostProps } from "@/lib/types";
 import { FaArrowRight } from "react-icons/fa";
 import { CategoryName } from "@/lib/types";
+import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 
 export default function ProjectsRender({ data, type }: BlogpostProps) {
   return (
-    <div className="-my-8 divide-y-4 divide-gray-100">
+    <div className="-my-8 divide-y-4 divide-gray-100 px-6">
       {data.map((item) => {
         return (
           <div className="py-10" key={item.id}>
@@ -27,12 +28,16 @@ export default function ProjectsRender({ data, type }: BlogpostProps) {
               <div className="space-y-6 text-left max-w-3xl">
                 <div className="flex justify-between">
                   <Category category={item.category as CategoryName} />
-                  <Link
-                    href={`/${type}/${item.slug}`}
-                    className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200 text-gray-950"
-                  >
-                    Learn More <FaArrowRight className="mt-2 ml-2" />
-                  </Link>
+
+                  <div className="flex space-x-4 text-2xl">
+                    <Link href={`/${type}/${item.slug}`}>
+                      <RiExternalLinkLine className="hover:scale-110" />
+                    </Link>
+
+                    <Link href={`${item.githubUrl}`}>
+                      <RiGithubLine className="hover:scale-110" />
+                    </Link>
+                  </div>
                 </div>
                 <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
                   {item.title}

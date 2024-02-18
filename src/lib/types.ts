@@ -19,6 +19,14 @@ export interface RequestBody {
   };
 }
 
+export interface ErrorData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  [key: string]: string;
+}
+
 export interface BlogData {
   id: string;
   slug: string;

@@ -12,6 +12,19 @@ export default async function Experience() {
     orderBy: {
       createdAt: "asc",
     },
+    select: {
+      id: true,
+      slug: true,
+      img: true,
+      title: true,
+      body: true,
+      html: false,
+      category: true,
+      githubUrl: false,
+      websiteUrl: false,
+      techStack: false,
+      createdAt: false,
+    },
   });
 
   return (

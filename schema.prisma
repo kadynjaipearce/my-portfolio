@@ -13,9 +13,10 @@ model Post {
   img      String
   title    String
   body     String
+  html     String?
   category String
-  githubUrl String
-  websiteUrl String
+  githubUrl String?
+  websiteUrl String?
   techStack  String[]
   createdAt  DateTime  @default(now())
 }
@@ -26,9 +27,10 @@ model Project {
   img      String
   title    String
   body     String
+  html     String?
   category String
-  githubUrl  String
-  websiteUrl String
+  githubUrl  String?
+  websiteUrl String?
   techStack  String[]
   createdAt  DateTime  @default(now())
 }

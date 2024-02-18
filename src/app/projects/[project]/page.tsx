@@ -24,7 +24,13 @@ export default async function Page({
           Posted On {data?.createdAt.toDateString()}
         </h2>
         <Image src={`/${data?.img}`} alt="" width={1000} height={1000}></Image>
-        <div dangerouslySetInnerHTML={{ __html: data?.body || "" }} />
+        {data?.html ? (
+          <div dangerouslySetInnerHTML={{ __html: data?.html || "" }} />
+        ) : (
+          <div className="text-3xl font-bold uppercase text-center">
+            🚧 - {data?.title} project page is currently being written - 🚧
+          </div>
+        )}
       </div>
     </Container>
   );

@@ -8,7 +8,7 @@ import { CategoryName } from "@/lib/types";
 export default function BlogRender({ data, type }: BlogpostProps) {
   return (
     <div className="py-10 px-6">
-      <div className="-my-8 divide-y-2 divide-gray-100">
+      <div className="-my-8 divide-y-4 divide-gray-100">
         {data.map((item) => {
           return (
             <div className="py-10 flex flex-wrap md:flex-nowrap" key={item.id}>

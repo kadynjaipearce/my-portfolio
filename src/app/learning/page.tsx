@@ -13,6 +13,19 @@ export default async function page() {
     orderBy: {
       createdAt: "asc",
     },
+    select: {
+      id: true,
+      slug: true,
+      img: true,
+      title: true,
+      body: true,
+      html: false,
+      category: true,
+      githubUrl: true,
+      websiteUrl: true,
+      techStack: true,
+      createdAt: true,
+    },
   });
 
   return (
@@ -30,8 +43,6 @@ export default async function page() {
               interested in the journey.
             </h2>
           </div>
-
-          <hr className="mt-10" />
         </div>
 
         <BlogRender data={blogPosts} type="learning" />

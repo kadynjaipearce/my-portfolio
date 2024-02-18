@@ -13,12 +13,25 @@ export default async function Page() {
     orderBy: {
       createdAt: "asc",
     },
+    select: {
+      id: true,
+      slug: true,
+      img: true,
+      title: true,
+      body: true,
+      html: false,
+      category: true,
+      githubUrl: true,
+      websiteUrl: true,
+      techStack: true,
+      createdAt: true,
+    },
   });
 
   return (
-    <Container>
+    <Container mobileFull={true}>
       <div className="mb-10 lg:mt-10 min-h-screen">
-        <div className="justify-between  w-full py-16 lg:rounded-xl">
+        <div className="flex justify-between w-full py-16 lg:rounded-xl">
           <div className="space-y-6 p-6">
             <h1 className="lg:text-7xl font-bold text-4xl">
               🏗️ - My Personal Projects

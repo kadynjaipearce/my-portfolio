@@ -1,19 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import validator from "validator";
-import { RequestBody } from "@/lib/types";
+import { RequestBody, ErrorData } from "@/lib/types";
 import { Resend } from "resend";
-import { EmailTemplate } from "@/components/EmailTemplate";
+import { SelfEmailTemplate } from "@/components/SelfEmailTemplate";
+import { UserEmailTemplate } from "@/components/UserEmailTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const domain = process.env.EMAIL_DOMAIN ?? "";
 
 export async function POST(request: NextRequest) {
   try {
     const body: RequestBody = await request.json();
     const { name, email, subject, message } = body.data;
 
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
+      // List all fields that are missing in the response for better UX
+      const missingFields = ["name", "email", "subject", "message"].filter(
+        (field) => !(body.data as ErrorData)[field]
+      );
       return NextResponse.json(
-        { success: false, message: "Missing required data" },
+        {
+          success: false,
+          message: `Missing required data: ${missingFields.join(", ")}`,
+        },
         { status: 400, headers: { "Content-Type": "application/json" } }
       );
     }
@@ -25,11 +34,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+    const selfEmail = await resend.emails.send({
+      from: domain,
       to: "kadynjaipearce@gmail.com",
       subject: subject,
-      react: EmailTemplate({
+      react: SelfEmailTemplate({
         firstName: name,
         email: email,
         subject: subject,
@@ -37,8 +46,17 @@ export async function POST(request: NextRequest) {
       }) as React.ReactElement,
     });
 
+    const userEmail = await resend.emails.send({
+      from: domain,
+      to: email,
+      subject: `Hello ${name} Nice to Meet You.`,
+      react: UserEmailTemplate({
+        firstName: name,
+      }) as React.ReactElement,
+    });
+
     return NextResponse.json(
-      { success: true, data },
+      { success: true, selfEmail },
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
   } catch (error) {
