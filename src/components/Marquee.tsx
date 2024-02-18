@@ -113,6 +113,17 @@ export default function Marquees() {
             />
           </Link>
         </div>
+        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+          <Link href={"https://www.microsoft.com/en-au/"}>
+            <Image
+              src="/solidity.svg"
+              className="w-auto h-20 mx-auto"
+              alt="client logo"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+        </div>
       </Marquee>
     </Container>
   );

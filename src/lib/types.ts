@@ -7,6 +7,7 @@ export interface navItemTypes {
 
 export interface ContainerProps {
   children: ReactNode;
+  mobileFull?: boolean;
 }
 
 export interface RequestBody {

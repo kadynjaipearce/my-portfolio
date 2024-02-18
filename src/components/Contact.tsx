@@ -60,9 +60,9 @@ export default function Page() {
 
   return (
     <section id="contact">
-      <Container>
-        <div className="flex items-center my-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-4 pt-10 rounded-3xl">
+      <Container mobileFull={true}>
+        <div className="flex items-center mt-20 lg:mb-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-4 pt-10 lg:rounded-3xl py-10">
             <div className="p-4">
               <h1 className="md:text-7xl text-5xl font-bold  text-center lg:text-left text-neutral-800">
                 Contact Me
@@ -129,7 +129,7 @@ export default function Page() {
                   type="button"
                   className={`${
                     loading ? "bg-green-500" : "bg-neutral-800"
-                  } text-white hover:bg-neutral-900 font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full ease-in-out duration-200`}
+                  } text-white hover:bg-neutral-900 font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full ease-in-out duration-200 disabled:cursor-not-allowed`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,6 @@ export default function Page() {
                   >
                     <path
                       d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
-                      clip-rule="evenodd"
                       data-original="#000000"
                     />
                   </svg>

@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default async function page() {
-  const blogPosts = await prisma.post.findMany({
+  const blogPosts = await prisma.project.findMany({
     orderBy: {
       createdAt: "asc",
     },
@@ -21,18 +21,22 @@ export default async function page() {
 
   return (
     <Container>
-      <div className="my-20 min-h-screen">
-        <div className=" flex justify-between bg-neutral-100 w-full py-16 rounded-xl">
-          <div className="space-y-6 p-6">
-            <h1 className="lg:text-7xl font-bold text-4xl">Learning</h1>
-            <h2>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Molestias, provident.
+      <div className="my-10 min-h-screen">
+        <div className=" flex justify-between bg-neutral-100 w-full lg:py-16 rounded-xl">
+          <div className="space-y-6 p-10">
+            <h1 className="lg:text-7xl font-bold text-3xl">
+              ✏️ - My Learning Journey
+            </h1>
+            <h2 className="max-w-5xl">
+              Welcome to my collection of insights and experiences from the
+              world of coding. Here, I share what I&apos;ve learned through
+              curiosity and hands-on projects, tracking my progress for anyone
+              interested in the journey.
             </h2>
           </div>
         </div>
 
-        <div className="py-24">
+        <div className="py-16">
           <div className="-my-8 divide-y-2 divide-gray-100">
             {blogPosts.map((item) => {
               return (
@@ -52,7 +56,7 @@ export default async function page() {
                     <h2 className="text-3xl font-bold text-gray-900 title-font mb-2">
                       {item.title}
                     </h2>
-                    <p className="font-medium">{item.body.slice(0, 350)}...</p>
+                    <p className="">{item.body.slice(0, 350)}...</p>
                     <Link
                       href={`/learning/${item.slug}`}
                       className="inline-flex items-center mt-4 leading-8 font-bold"
