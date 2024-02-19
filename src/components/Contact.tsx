@@ -12,7 +12,6 @@ export default function Page() {
 
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,7 +36,7 @@ export default function Page() {
         body: JSON.stringify({ data: data }),
       });
 
-      const result = await res.json(); // Assuming your API returns JSON
+      const result = await res.json();
 
       if (!res.ok) {
         throw new Error(result.message || "Failed to send email"); // Use server-provided message or a default one
@@ -62,12 +61,12 @@ export default function Page() {
     <section id="contact">
       <Container mobileFull={true}>
         <div className="flex items-center mt-20 lg:mb-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-6 pt-10 lg:rounded-3xl py-10 rounded-t-3xl">
+          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-6 pt-10 lg:rounded-3xl py-10">
             <div className="p-4">
-              <h1 className="md:text-7xl text-5xl font-bold  text-center lg:text-left text-neutral-800">
+              <h1 className="md:text-7xl text-5xl font-bold  text-left lg:text-left text-neutral-800">
                 Contact Me
               </h1>
-              <p className="mt-3 text-neutral-800 font-semibold text-xl text-center lg:text-left ">
+              <p className="mt-3 text-neutral-800 font-semibold text-xl text-left lg:text-left ">
                 Interested in collaborating? Have a job opportunity? or just
                 want to ask me a question? I&apos;d love to hear from you.
               </p>

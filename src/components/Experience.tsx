@@ -4,8 +4,8 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import prisma from "@/lib/utils";
 import Category from "@/components/Category";
-import { FaArrowRight } from "react-icons/fa";
 import { CategoryName } from "@/lib/types";
+import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 
 export default async function Experience() {
   const projects = await prisma.project.findMany({
@@ -20,7 +20,7 @@ export default async function Experience() {
       body: true,
       html: false,
       category: true,
-      githubUrl: false,
+      githubUrl: true,
       websiteUrl: false,
       techStack: false,
       createdAt: false,
@@ -34,7 +34,7 @@ export default async function Experience() {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
             <Link href={`/projects/${projects[0]?.slug}`} className="max-w-lg">
               <Image
-                src="/complier.webp"
+                src={`/${projects[0]?.img}`}
                 alt=""
                 className="w-full rounded-xl"
                 width={10000}
@@ -45,18 +45,21 @@ export default async function Experience() {
             <div className="space-y-6 text-left max-w-3xl">
               <div className="flex justify-between">
                 <Category category={projects[0].category as CategoryName} />
-                <Link
-                  href={`/projects/${projects[0]?.slug}`}
-                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200 text-gray-950"
-                >
-                  Learn More <FaArrowRight className="mt-2 ml-2" />
-                </Link>
+                <div className="flex space-x-4 text-2xl mt-1">
+                  <Link href={`/projects/${projects[0]?.slug}`}>
+                    <RiExternalLinkLine className="hover:scale-110" />
+                  </Link>
+
+                  <Link href={`${projects[0]?.githubUrl}`}>
+                    <RiGithubLine className="hover:scale-110" />
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
+              <h3 className="text-3xl font-bold text-heading lg:text-4xl text-gray-950">
                 {projects[0].title}
               </h3>
 
-              <p className="text-lg lg:text-left text-center text-gray-950">
+              <p className="text-lg  text-gray-950">
                 {projects[0].body.slice(0, 200)}...
               </p>
             </div>
@@ -65,7 +68,7 @@ export default async function Experience() {
           <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
             <Link href={`/projects/${projects[1]?.slug}`} className="max-w-lg">
               <Image
-                src="/blockchain.webp"
+                src={`/${projects[1]?.img}`}
                 alt=""
                 className="w-full rounded-xl"
                 width={10000}
@@ -76,18 +79,21 @@ export default async function Experience() {
             <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
                 <Category category={projects[1].category as CategoryName} />
-                <Link
-                  href={`/projects/${projects[1]?.slug}`}
-                  className="flex leading-8 font-bold hover:bg-gray-200 px-3 rounded-full ease-in-out duration-200 text-gray-950"
-                >
-                  Learn More <FaArrowRight className="mt-2 ml-2" />
-                </Link>
+                <div className="flex space-x-4 text-2xl mt-1">
+                  <Link href={`/projects/${projects[1]?.slug}`}>
+                    <RiExternalLinkLine className="hover:scale-110" />
+                  </Link>
+
+                  <Link href={`${projects[1]?.githubUrl}`}>
+                    <RiGithubLine className="hover:scale-110" />
+                  </Link>
+                </div>
               </div>
-              <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
+              <h3 className="text-3xl font-bold text-heading text-gray-950">
                 {projects[1].title}
               </h3>
 
-              <p className="text-lg lg:text-left text-center text-gray-950">
+              <p className="text-lg text-gray-950">
                 {projects[1].body.slice(0, 200)}...
               </p>
             </div>

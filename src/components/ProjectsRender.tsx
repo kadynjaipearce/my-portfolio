@@ -1,10 +1,8 @@
 import React from "react";
-
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/Category";
 import { BlogpostProps } from "@/lib/types";
-import { FaArrowRight } from "react-icons/fa";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 
@@ -39,11 +37,11 @@ export default function ProjectsRender({ data, type }: BlogpostProps) {
                     </Link>
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-heading lg:text-4xl lg:text-left text-center text-gray-950">
+                <h3 className="text-3xl font-bold text-heading lg:text-4xl text-left text-gray-950">
                   {item.title}
                 </h3>
 
-                <p className="text-lg lg:text-left text-center text-gray-950">
+                <p className="text-md text-left text-gray-950">
                   {item.body.slice(0, 200)}...
                 </p>
               </div>

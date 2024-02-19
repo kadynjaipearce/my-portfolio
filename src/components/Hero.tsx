@@ -17,8 +17,8 @@ export default function Hero() {
     <Container>
       <div className="flex my-10 md:mt-40 md:mb-20 gap-10">
         <div className="flex-grow w-3/5">
-          <div className=" text-center lg:text-left">
-            <h1 className="text-7xl lg:text-8xl font-bold text-gray-950">
+          <div>
+            <h1 className="text-[69px] leading-[1] lg:text-8xl font-bold text-gray-950">
               Hi, I&apos;m{" "}
               <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">
                 Kadyn-Jai Pearce

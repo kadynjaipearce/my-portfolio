@@ -30,7 +30,7 @@ export default function BlogRender({ data, type }: BlogpostProps) {
                   className="inline-flex items-center mt-4 leading-8 font-bold"
                 >
                   Learn More
-                  <FaArrowRight className="mt-[2px] ml-2" />
+                  <FaArrowRight className="mt-[2px] ml-2 hover:tra" />
                 </Link>
               </div>
             </div>

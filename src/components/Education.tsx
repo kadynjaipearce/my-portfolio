@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "./Container";
 import Image from "next/image";
+import Container from "@/components/Container";
 
 export default function Education() {
   return (
