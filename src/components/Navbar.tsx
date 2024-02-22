@@ -88,10 +88,11 @@ export default function Navbar() {
             </div>
             <Link
               href={"/api/download"}
-              className={`inter lg:link-button mx-4 block rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] lg:relative lg:bottom-0 lg:top-0 lg:inline-block lg:transform-none`}
+              className={`inter mx-4 flex rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] `}
             >
-              <span className="flex w-full rounded bg-black px-4 py-[4px] text-white lg:w-auto lg:px-4 lg:py-[4px]">
-                Download My Resume <HiDownload className="mt-[7px] lg:ml-2" />
+              <span className="flex w-full justify-between rounded bg-black px-4 py-[10px] text-white lg:py-[4px]">
+                <div className="">Download My Resume</div>
+                <HiDownload className="ml-3 lg:mt-[8px]" />
               </span>
             </Link>
           </div>

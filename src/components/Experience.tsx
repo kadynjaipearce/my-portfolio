@@ -44,7 +44,7 @@ export default async function Experience() {
 
             <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
-                <Category category={projects[0].category as CategoryName} />
+                <Category category={projects[0]?.category as CategoryName} />
                 <div className="mt-1 flex space-x-4 text-2xl">
                   <Link href={`/projects/${projects[0]?.slug}`}>
                     <RiExternalLinkLine className="hover:scale-110" />
@@ -56,10 +56,10 @@ export default async function Experience() {
                 </div>
               </div>
               <h3 className="text-heading text-3xl font-bold text-gray-950 lg:text-4xl">
-                {projects[0].title}
+                {projects[0]?.title}
               </h3>
 
-              <p className="text-lg  text-gray-950">{projects[0].body}</p>
+              <p className="text-lg  text-gray-950">{projects[0]?.body}</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ export default async function Experience() {
 
             <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
-                <Category category={projects[1].category as CategoryName} />
+                <Category category={projects[1]?.category as CategoryName} />
                 <div className="mt-1 flex space-x-4 text-2xl">
                   <Link href={`/projects/${projects[1]?.slug}`}>
                     <RiExternalLinkLine className="hover:scale-110" />
@@ -88,10 +88,10 @@ export default async function Experience() {
                 </div>
               </div>
               <h3 className="text-heading text-3xl font-bold text-gray-950">
-                {projects[1].title}
+                {projects[1]?.title}
               </h3>
 
-              <p className="text-lg text-gray-950">{projects[1].body}</p>
+              <p className="text-lg text-gray-950">{projects[1]?.body}</p>
             </div>
           </div>
         </div>

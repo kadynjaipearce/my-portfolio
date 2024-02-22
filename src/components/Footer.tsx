@@ -30,7 +30,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
+              href="https://www.linkedin.com/in/kadynpearce/"
               className="p-1 hover:scale-110"
             >
               <RiLinkedinFill className="" />

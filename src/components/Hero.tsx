@@ -52,7 +52,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="https://www.linkedin.com/in/kadyn-jai-pearce-9b4ab6208/"
+                href="https://www.linkedin.com/in/kadynpearce/"
                 className="flex items-center rounded-full border-2 border-blue-200 bg-blue-200 p-1 px-2 text-sm font-semibold text-blue-600 shadow-sm hover:scale-105"
               >
                 <RiLinkedinBoxFill className="mr-2 text-lg" /> <h1>Linkedin</h1>

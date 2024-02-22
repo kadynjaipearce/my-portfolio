@@ -15,7 +15,7 @@ export default function Marquees() {
         gradientWidth={100}
       >
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://www.nextjs.org"}>
             <Image
               src="/nextjs.svg"
               className="mx-auto h-20 w-auto"
@@ -26,7 +26,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://nodejs.org/en"}>
             <Image
               src="/nodejs.svg"
               className="mx-auto -mt-5 h-16 w-auto"
@@ -37,7 +37,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://www.gnu.org/software/bash"}>
             <Image
               src="/bash.svg"
               className="mx-auto h-20 w-auto"
@@ -48,7 +48,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://git-scm.com/"}>
             <Image
               src="/git.svg"
               className="mx-auto h-16 w-auto"
@@ -59,7 +59,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://react.dev/"}>
             <Image
               src="/react.svg"
               className="mx-auto h-24 w-auto"
@@ -70,7 +70,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://www.typescriptlang.org/"}>
             <Image
               src="/typescript.svg"
               className="mx-auto h-20 w-auto"
@@ -81,7 +81,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://openai.com/"}>
             <Image
               src="/openai.svg"
               className="mx-auto h-14 w-auto"
@@ -92,18 +92,7 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
-            <Image
-              src="/cpp.svg"
-              className="mx-auto h-20 w-auto"
-              alt="client logo"
-              width={1000}
-              height={1000}
-            />
-          </Link>
-        </div>
-        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://www.python.org/"}>
             <Image
               src="/python.svg"
               className="mx-auto h-20 w-auto"
@@ -114,7 +103,19 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
-          <Link href={"https://www.microsoft.com/en-au/"}>
+          <Link href={"https://learn.microsoft.com/en-us/cpp/?view=msvc-170"}>
+            <Image
+              src="/cpp.svg"
+              className="mx-auto h-20 w-auto"
+              alt="client logo"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+        </div>
+
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
+          <Link href={"https://soliditylang.org/"}>
             <Image
               src="/solidity.svg"
               className="mx-auto h-20 w-auto"

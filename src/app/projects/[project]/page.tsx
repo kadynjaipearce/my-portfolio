@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import Category from "@/components/Category";
 import Container from "@/components/Container";
 import prisma from "@/lib/utils";
@@ -17,6 +18,10 @@ export default async function Page({
       slug: params.project,
     },
   });
+  if (!data) {
+    return notFound();
+  }
+
   return (
     <Container mobileFull={true}>
       <div className="my-16">
