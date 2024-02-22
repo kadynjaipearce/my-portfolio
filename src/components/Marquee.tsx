@@ -14,110 +14,110 @@ export default function Marquees() {
         pauseOnHover
         gradientWidth={100}
       >
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/nextjs.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/nodejs.svg"
-              className="w-auto h-16 mx-auto -mt-5"
+              className="mx-auto -mt-5 h-16 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/bash.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/git.svg"
-              className="w-auto h-16 mx-auto"
+              className="mx-auto h-16 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/react.svg"
-              className="w-auto h-24 mx-auto"
+              className="mx-auto h-24 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/typescript.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/openai.svg"
-              className="w-auto h-14 mx-auto"
+              className="mx-auto h-14 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/cpp.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/python.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}
             />
           </Link>
         </div>
-        <div className="mx-10 transition duration-200 grayscale hover:grayscale-0">
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://www.microsoft.com/en-au/"}>
             <Image
               src="/solidity.svg"
-              className="w-auto h-20 mx-auto"
+              className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}
               height={1000}

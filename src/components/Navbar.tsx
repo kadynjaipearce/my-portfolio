@@ -16,15 +16,15 @@ export default function Navbar() {
   const [navActive, setNavActive] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white lg:bg-white/50  lg:backdrop-blur-xl border-b py-0 lg:py-2 ">
-      <div className="pl-6 pr-3 lg:pr-6 pt-1 lg:pt-0 mx-auto font-semibold bg-white lg:bg-transparent container-custom">
+    <header className="sticky top-0 z-50 border-b bg-white  py-0 lg:bg-white/50 lg:py-2 lg:backdrop-blur-xl ">
+      <div className="container-custom mx-auto bg-white pl-6 pr-3 pt-1 font-semibold lg:bg-transparent lg:pr-6 lg:pt-0">
         <div className="items-center justify-between text-black lg:flex">
-          <div className="flex items-center justify-between ml-2 sm:ml-0 lg:my-3">
+          <div className="ml-2 flex items-center justify-between sm:ml-0 lg:my-3">
             <div className="">
               $ {""}
               <Link
                 href={"/"}
-                className="hover:underline text-[16px] lg:text-[18px] "
+                className="text-[16px] hover:underline lg:text-[18px] "
                 onClick={() => {
                   setNavActive(false);
                 }}
@@ -39,12 +39,12 @@ export default function Navbar() {
               }}
               className={`${
                 navActive ? "active" : ""
-              } nav-menu-bar lg:hidden z-[1001]`}
+              } nav-menu-bar z-[1001] lg:hidden`}
             >
               <svg
                 className={`bars ${
                   navActive ? "active" : ""
-                } p-3 sm:p-2 -mt-1 -mr-2 xs:-mr-0`}
+                } xs:-mr-0 -mr-2 -mt-1 p-3 sm:p-2`}
                 viewBox="0 0 100 100"
               >
                 <path
@@ -63,16 +63,16 @@ export default function Navbar() {
             </div>
           </div>
           <div
-            className={`fixed top-0 right-0 bottom-0  ${
+            className={`fixed bottom-0 right-0 top-0  ${
               navActive ? "active" : ""
-            }  nav-menu z-[1000] lg:static lg:flex lg:space-x-4  lg:w-auto`}
+            }  nav-menu z-[1000] lg:static lg:flex lg:w-auto  lg:space-x-4`}
           >
-            <div className="mt-16 mr-0 sm:mr-6 lg:mt-0 lg:static lg:flex lg:space-x-4 lg:items-center lg:w-auto">
+            <div className="mr-0 mt-16 sm:mr-6 lg:static lg:mt-0 lg:flex lg:w-auto lg:items-center lg:space-x-4">
               {navItems.map((item) => {
                 return (
                   <div
                     key={item.title}
-                    className={`mx-5 lg:my-0 my-7 lg:mx-0 text-[18px]`}
+                    className={`mx-5 my-7 text-[18px] lg:mx-0 lg:my-0`}
                   >
                     <Link
                       href={item.url}
@@ -88,9 +88,9 @@ export default function Navbar() {
             </div>
             <Link
               href={"/api/download"}
-              className={`mx-4 lg:relative lg:bottom-0 lg:top-0 lg:transform-none p-[3px] inter rounded-md bg-gradient-to-r from-blue-400 to-purple-500 block lg:inline-block lg:link-button`}
+              className={`inter lg:link-button mx-4 block rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] lg:relative lg:bottom-0 lg:top-0 lg:inline-block lg:transform-none`}
             >
-              <span className="flex w-full lg:w-auto px-4 lg:px-4 py-[4px] lg:py-[4px] text-white bg-black rounded">
+              <span className="flex w-full rounded bg-black px-4 py-[4px] text-white lg:w-auto lg:px-4 lg:py-[4px]">
                 Download My Resume <HiDownload className="mt-[7px] lg:ml-2" />
               </span>
             </Link>

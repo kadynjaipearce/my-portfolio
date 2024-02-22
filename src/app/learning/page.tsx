@@ -30,10 +30,10 @@ export default async function page() {
 
   return (
     <Container mobileFull={true}>
-      <div className="mb-10 lg:mt-10 min-h-screen">
-        <div className="flex justify-between w-full py-16 lg:rounded-xl">
+      <div className="mb-10 min-h-screen lg:mt-10">
+        <div className="flex w-full justify-between py-16 lg:rounded-xl">
           <div className="space-y-6 p-6">
-            <h1 className="lg:text-7xl font-bold text-4xl">
+            <h1 className="text-4xl font-bold lg:text-7xl">
               ✏️ - My Learning Journey
             </h1>
             <h2 className="max-w-5xl">

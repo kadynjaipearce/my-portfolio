@@ -14,7 +14,7 @@ export default function Page() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setData((prevData) => ({ ...prevData, [name]: value }));
@@ -60,22 +60,22 @@ export default function Page() {
   return (
     <section id="contact">
       <Container mobileFull={true}>
-        <div className="flex items-center mt-20 lg:mb-20">
-          <div className="flex flex-col lg:flex-row items-center gap-16 bg-neutral-50 lg:p-10 p-6 pt-10 lg:rounded-3xl py-10">
+        <div className="mt-20 flex items-center lg:mb-20">
+          <div className="flex flex-col items-center gap-16 bg-neutral-50 p-6 py-10 pt-10 lg:flex-row lg:rounded-3xl lg:p-10">
             <div className="p-4">
-              <h1 className="md:text-7xl text-5xl font-bold  text-left lg:text-left text-neutral-800">
+              <h1 className="text-left text-5xl font-bold  text-neutral-800 md:text-7xl lg:text-left">
                 Contact Me
               </h1>
-              <p className="mt-3 text-neutral-800 font-semibold text-xl text-left lg:text-left ">
+              <p className="mt-3 text-left text-xl font-semibold text-neutral-800 lg:text-left ">
                 Interested in collaborating? Have a job opportunity? or just
                 want to ask me a question? I&apos;d love to hear from you.
               </p>
-              <div className="space-y-4 my-7 lg:max-w-[200px] ">
-                <div className="space-x-6 flex p-1 items-center rounded-full px-2 text-sm font-semibold text-green-600 shadow-sm border-green-100 bg-green-100">
-                  <div className="flex items-center justify-center w-6 h-6">
-                    <span className="relative flex w-3 h-3">
-                      <span className="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-emerald-400"></span>
-                      <span className="relative inline-flex w-3 h-3 rounded-full bg-emerald-500"></span>
+              <div className="my-7 space-y-4 lg:max-w-[200px] ">
+                <div className="flex items-center space-x-6 rounded-full border-green-100 bg-green-100 p-1 px-2 text-sm font-semibold text-green-600 shadow-sm">
+                  <div className="flex h-6 w-6 items-center justify-center">
+                    <span className="relative flex h-3 w-3">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
                     </span>
                   </div>
 
@@ -85,7 +85,7 @@ export default function Page() {
             </div>
             <div className=" rounded-lg">
               {errorMessage && (
-                <div className="text-red-500 text-center mb-5 font-semibold">
+                <div className="mb-5 text-center font-semibold text-red-500">
                   {errorMessage}
                 </div>
               )}
@@ -94,7 +94,7 @@ export default function Page() {
                   name="name"
                   type="name"
                   placeholder="Name"
-                  className="w-full rounded-md py-3 px-4 text-sm outline-neutral-800 bg-gray-100"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
                   value={data.name}
                   onChange={handleInputChange}
                 />
@@ -102,7 +102,7 @@ export default function Page() {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  className="w-full rounded-md py-3 px-4 text-sm outline-neutral-800 bg-gray-100"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
                   value={data.email}
                   onChange={handleInputChange}
                 />
@@ -110,7 +110,7 @@ export default function Page() {
                   name="subject"
                   type="text"
                   placeholder="Subject"
-                  className="w-full rounded-md py-3 px-4 text-sm outline-neutral-800 bg-gray-100"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
                   value={data.subject}
                   onChange={handleInputChange}
                 />
@@ -118,7 +118,7 @@ export default function Page() {
                   name="message"
                   placeholder="Message"
                   rows={6}
-                  className="w-full rounded-md px-4 text-sm pt-3 outline-neutral-800 bg-gray-100 resize-none"
+                  className="w-full resize-none rounded-md bg-gray-100 px-4 pt-3 text-sm outline-neutral-800"
                   value={data.message}
                   onChange={handleInputChange}
                 ></textarea>
@@ -128,7 +128,7 @@ export default function Page() {
                   type="button"
                   className={`${
                     loading ? "bg-green-500" : "bg-neutral-800"
-                  } text-white hover:bg-neutral-900 font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full ease-in-out duration-200 disabled:cursor-not-allowed`}
+                  } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out hover:bg-neutral-900 disabled:cursor-not-allowed`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

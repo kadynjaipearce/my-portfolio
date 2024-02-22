@@ -6,8 +6,8 @@ export default function Education() {
   return (
     <Container mobileFull={true}>
       <div className="mt-40">
-        <div className="flex py-14 lg:py-24 md:flex-row flex-col items-center bg-neutral-50 lg:rounded-3xl p-10">
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 mt-4 lg:mt-0">
+        <div className="flex flex-col items-center bg-neutral-50 p-10 py-14 md:flex-row lg:rounded-3xl lg:py-24">
+          <div className="mt-4 md:w-1/2 lg:mt-0 lg:w-full lg:max-w-lg">
             <Image
               alt="Edith Cowan University Svg"
               src="/ecu.svg"
@@ -15,24 +15,24 @@ export default function Education() {
               height={250}
             />
           </div>
-          <div className="lg:flex-grow md:w-1/2 mt-6 flex flex-col md:items-start md:text-left items-center text-center">
-            <div className="w-full flex-col xl:flex xl:flex-row justify-between items-center">
+          <div className="mt-6 flex flex-col items-center text-center md:w-1/2 md:items-start md:text-left lg:flex-grow">
+            <div className="w-full flex-col items-center justify-between xl:flex xl:flex-row">
               <div className="">
-                <h1 className="sm:text-4xl text-lg font-bold text-[#8885e7] flex-grow">
+                <h1 className="flex-grow text-lg font-bold text-[#8885e7] sm:text-4xl">
                   Edith Cowan University{" "}
                   <br className="hidden lg:inline-block" />
                   Bachelor of Computer Science
                 </h1>
-                <h3 className="font-semibold my-2 text-sm">
+                <h3 className="my-2 text-sm font-semibold">
                   Major: Software Engineering
                 </h3>
               </div>
 
-              <h1 className="lg:-mt-14 mb-4 inline-flex items-center rounded-full border-2 border-gray-200 bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-600 shadow-sm">
+              <h1 className="mb-4 inline-flex items-center rounded-full border-2 border-gray-200 bg-gray-200 px-2 py-1 text-sm font-semibold text-gray-600 shadow-sm lg:-mt-14">
                 July 2024 - 2027
               </h1>
             </div>
-            <p className="mb-8 leading-relaxed text-[#00172a] text-es">
+            <p className="text-es mb-8 leading-relaxed text-[#00172a]">
               In July 2024, I will embark on my university journey, which will
               deepen my understanding of complex software engineering concepts
               and provide me with practical experience in collaborative project

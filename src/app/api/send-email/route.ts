@@ -16,21 +16,21 @@ export async function POST(request: NextRequest) {
     if (!name || !email || !subject || !message) {
       // List all fields that are missing in the response for better UX
       const missingFields = ["name", "email", "subject", "message"].filter(
-        (field) => !(body.data as ErrorData)[field]
+        (field) => !(body.data as ErrorData)[field],
       );
       return NextResponse.json(
         {
           success: false,
           message: `Missing required data: ${missingFields.join(", ")}`,
         },
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
     if (!validator.isEmail(email)) {
       return NextResponse.json(
         { success: false, message: "Invalid email address" },
-        { status: 400, headers: { "Content-Type": "application/json" } }
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
@@ -57,13 +57,13 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { success: true, selfEmail },
-      { status: 200, headers: { "Content-Type": "application/json" } }
+      { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {
     console.log(error);
     return NextResponse.json(
       { success: false, message: "An unexpected error occurred" },
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 }

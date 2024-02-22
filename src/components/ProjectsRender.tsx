@@ -23,7 +23,7 @@ export default function ProjectsRender({ data, type }: BlogpostProps) {
                 />
               </Link>
 
-              <div className="space-y-6 text-left max-w-3xl">
+              <div className="max-w-3xl space-y-6 text-left">
                 <div className="flex justify-between">
                   <Category category={item.category as CategoryName} />
 
@@ -37,7 +37,7 @@ export default function ProjectsRender({ data, type }: BlogpostProps) {
                     </Link>
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-heading lg:text-4xl text-left text-gray-950">
+                <h3 className="text-heading text-left text-3xl font-bold text-gray-950 lg:text-4xl">
                   {item.title}
                 </h3>
 

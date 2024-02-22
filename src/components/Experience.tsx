@@ -42,10 +42,10 @@ export default async function Experience() {
               />
             </Link>
 
-            <div className="space-y-6 text-left max-w-3xl">
+            <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
                 <Category category={projects[0].category as CategoryName} />
-                <div className="flex space-x-4 text-2xl mt-1">
+                <div className="mt-1 flex space-x-4 text-2xl">
                   <Link href={`/projects/${projects[0]?.slug}`}>
                     <RiExternalLinkLine className="hover:scale-110" />
                   </Link>
@@ -55,7 +55,7 @@ export default async function Experience() {
                   </Link>
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-heading lg:text-4xl text-gray-950">
+              <h3 className="text-heading text-3xl font-bold text-gray-950 lg:text-4xl">
                 {projects[0].title}
               </h3>
 
@@ -79,7 +79,7 @@ export default async function Experience() {
             <div className="max-w-3xl space-y-6 text-left">
               <div className="flex justify-between">
                 <Category category={projects[1].category as CategoryName} />
-                <div className="flex space-x-4 text-2xl mt-1">
+                <div className="mt-1 flex space-x-4 text-2xl">
                   <Link href={`/projects/${projects[1]?.slug}`}>
                     <RiExternalLinkLine className="hover:scale-110" />
                   </Link>
@@ -89,7 +89,7 @@ export default async function Experience() {
                   </Link>
                 </div>
               </div>
-              <h3 className="text-3xl font-bold text-heading text-gray-950">
+              <h3 className="text-heading text-3xl font-bold text-gray-950">
                 {projects[1].title}
               </h3>
 

@@ -19,18 +19,18 @@ export default async function Page({
     <Container>
       <div className="my-16">
         <Category category={data?.category as CategoryName} />
-        <div className="flex justify-between my-6">
-          <h1 className="text-black font-bold text-5xl">{data?.title}</h1>
+        <div className="my-6 flex justify-between">
+          <h1 className="text-5xl font-bold text-black">{data?.title}</h1>
           <h2 className="text-2xl font-semibold">
             Posted On {data?.createdAt.toDateString()}
           </h2>
         </div>
-        <div className="flex space-x-5 my-4 flex-wrap">
+        <div className="my-4 flex flex-wrap space-x-5">
           {data?.techStack.map((item) => {
             return (
               <div
                 key={item}
-                className="text-green-600 font-semibold bg-green-200 w-36 text-center rounded-lg p-1 my-2"
+                className="my-2 w-36 rounded-lg bg-green-200 p-1 text-center font-semibold text-green-600"
               >
                 {item}
               </div>
@@ -41,7 +41,7 @@ export default async function Page({
         {data?.html ? (
           <div dangerouslySetInnerHTML={{ __html: data?.html || "" }} />
         ) : (
-          <div className="text-3xl font-bold uppercase text-center">
+          <div className="text-center text-3xl font-bold uppercase">
             🚧 - {data?.title} project page is currently being written - 🚧
           </div>
         )}

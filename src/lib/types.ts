@@ -34,8 +34,8 @@ export interface BlogData {
   title: string;
   body: string;
   category: string;
-  githubUrl: string;
-  websiteUrl: string;
+  githubUrl: string | null;
+  websiteUrl: string | null;
   techStack: string[];
   createdAt: Date;
 }
