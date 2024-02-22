@@ -59,9 +59,7 @@ export default async function Experience() {
                 {projects[0].title}
               </h3>
 
-              <p className="text-lg  text-gray-950">
-                {projects[0].body.slice(0, 200)}...
-              </p>
+              <p className="text-lg  text-gray-950">{projects[0].body}</p>
             </div>
           </div>
 
@@ -93,9 +91,7 @@ export default async function Experience() {
                 {projects[1].title}
               </h3>
 
-              <p className="text-lg text-gray-950">
-                {projects[1].body.slice(0, 200)}...
-              </p>
+              <p className="text-lg text-gray-950">{projects[1].body}</p>
             </div>
           </div>
         </div>

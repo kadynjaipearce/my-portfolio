@@ -5,6 +5,7 @@ const categoryColors: Record<CategoryName, string> = {
   "Software Engineering": "border-blue-200 bg-blue-200 text-blue-600",
   "Web Development": "border-green-200 bg-green-200 text-green-600",
   "Blockchain Development": "border-pink-200 bg-pink-200 text-pink-600",
+  Other: "border-neutral-200 bg-neutral-200 text-neutral-600",
 };
 
 interface CategoryProps {

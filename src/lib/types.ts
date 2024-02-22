@@ -41,11 +41,41 @@ export interface BlogData {
 }
 
 export interface BlogpostProps {
-  data: BlogData[];
+  blog: BlogData[];
+  type: string;
+}
+
+export interface ProjectProps {
+  project: BlogData[];
   type: string;
 }
 
 export type CategoryName =
   | "Software Engineering"
   | "Web Development"
-  | "Blockchain Development";
+  | "Blockchain Development"
+  | "Other";
+
+export type TechName =
+  | "React"
+  | "C++"
+  | "C"
+  | "Visual Studio"
+  | "LLVM"
+  | "NodeJs"
+  | "TypeScript"
+  | "JavaScript"
+  | "Python"
+  | "Nextjs"
+  | "Solidity"
+  | "Rust"
+  | "Expressjs"
+  | "OpenCV"
+  | "Web3js"
+  | "Tailwindcss"
+  | "Nginx"
+  | "Bash"
+  | "Linux"
+  | "Raspberry Pi"
+  | "MongoDB"
+  | "Visual Studio Code";

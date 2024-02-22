@@ -2,18 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/Category";
-import { BlogpostProps } from "@/lib/types";
+import { ProjectProps } from "@/lib/types";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 
-export default function ProjectsRender({ data, type }: BlogpostProps) {
+export default function ProjectsRender({ project, type }: ProjectProps) {
   return (
     <div className="-my-8 divide-y-4 divide-gray-100 px-6">
-      {data.map((item) => {
+      {project.map((data) => {
         return (
-          <div className="py-10" key={item.id}>
+          <div className="py-10" key={data.id}>
             <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
-              <Link href={`/${type}/${item.slug}`} className="max-w-lg">
+              <Link href={`/${type}/${data.slug}`} className="max-w-lg">
                 <Image
                   src="/complier.webp"
                   alt=""
@@ -25,25 +25,23 @@ export default function ProjectsRender({ data, type }: BlogpostProps) {
 
               <div className="max-w-3xl space-y-6 text-left">
                 <div className="flex justify-between">
-                  <Category category={item.category as CategoryName} />
+                  <Category category={data.category as CategoryName} />
 
                   <div className="flex space-x-4 text-2xl">
-                    <Link href={`/${type}/${item.slug}`}>
+                    <Link href={`/${type}/${data.slug}`}>
                       <RiExternalLinkLine className="hover:scale-110" />
                     </Link>
 
-                    <Link href={`${item.githubUrl}`}>
+                    <Link href={`${data.githubUrl}`}>
                       <RiGithubLine className="hover:scale-110" />
                     </Link>
                   </div>
                 </div>
                 <h3 className="text-heading text-left text-3xl font-bold text-gray-950 lg:text-4xl">
-                  {item.title}
+                  {data.title}
                 </h3>
 
-                <p className="text-md text-left text-gray-950">
-                  {item.body.slice(0, 200)}...
-                </p>
+                <p className="text-md text-left text-gray-950">{data.body}</p>
               </div>
             </div>
           </div>
