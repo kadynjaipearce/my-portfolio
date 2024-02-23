@@ -86,15 +86,15 @@ export default function Navbar() {
                 );
               })}
             </div>
-            <Link
-              href={"/api/download"}
+            <button
+              onClick={() => window.open("/kadyn.pdf", "_blank")}
               className={`inter mx-4 flex rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] `}
             >
               <span className="flex w-full justify-between rounded bg-black px-4 py-[10px] text-white lg:py-[4px]">
                 <div className="">Download My Resume</div>
                 <HiDownload className="ml-3 lg:mt-[8px]" />
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { blog: string } }) {
             </h2>
           </div>
           <div className="my-7 flex flex-wrap gap-3">
-            {data?.techStack.map((item) => {
+            {data?.techStack.map((item: string) => {
               return <TechPill tech={item as TechName} key={item} />;
             })}
           </div>
