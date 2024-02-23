@@ -8,10 +8,10 @@ import {
   RiLinkedinBoxFill,
 } from "react-icons/ri";
 import "highlight.js/styles/github-dark.css";
+import { heroData } from "@/lib/utils";
 
 export default function Hero() {
-  const code =
-    "class Person\n{\n  public:\n    std::string name = 'Kadyn-Jai Pearce';\n    int age = 28;\n    std::string occupation = 'Software Developer';\n    std::string hobbies = 'Coding, Hiking, Photography';\n    std::string about = 'Passionate software developer ';\n\n    Person() {}\n\n    void displayAboutMe() {\n        std::cout << 'Name: ' << name << '\\n'\n                  << 'Age: ' << age << '\\n'\n                  << 'Occupation: ' << occupation << '\\n'\n                  << 'Hobbies: ' << hobbies << '\\n'\n                  << 'About: ' << about << std::endl;\n    }\n};";
+  const code = heroData;
   const js = hljs.highlight(code, { language: "c++" }).value;
   return (
     <Container>
