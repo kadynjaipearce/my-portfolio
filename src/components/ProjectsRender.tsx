@@ -15,7 +15,7 @@ export default function ProjectsRender({ project, type }: ProjectProps) {
             <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
               <Link href={`/${type}/${data.slug}`} className="max-w-lg">
                 <Image
-                  src={`/${data.img}.webp`}
+                  src={`/${data.img}`}
                   alt=""
                   className="w-full rounded-xl"
                   width={10000}

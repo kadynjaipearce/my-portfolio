@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { success: true, selfEmail },
+      { success: true, userEmail },
       { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {

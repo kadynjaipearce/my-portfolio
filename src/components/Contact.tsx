@@ -12,6 +12,7 @@ export default function Page() {
 
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -49,11 +50,16 @@ export default function Page() {
         subject: "",
         message: "",
       });
+      // Ensure loading is always reset
+      setSuccess(true);
     } catch (error: unknown) {
       console.error(error);
       setErrorMessage((error as Error).message);
     } finally {
-      setLoading(false); // Ensure loading is always reset
+      setLoading(false);
+      setTimeout(() => {
+        setSuccess(false);
+      }, 10000);
     }
   }
 
@@ -123,12 +129,16 @@ export default function Page() {
                   onChange={handleInputChange}
                 ></textarea>
                 <button
-                  disabled={loading}
+                  disabled={loading || success}
                   onClick={handleSendEmail}
                   type="button"
                   className={`${
-                    loading ? "bg-green-500" : "bg-neutral-800"
-                  } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out hover:bg-neutral-900 disabled:cursor-not-allowed`}
+                    loading
+                      ? "bg-green-500"
+                      : success
+                        ? "bg-red-500"
+                        : "bg-neutral-800 hover:bg-neutral-900"
+                  } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out  disabled:cursor-not-allowed`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +153,11 @@ export default function Page() {
                       data-original="#000000"
                     />
                   </svg>
-                  {loading ? "Sending" : "Send Message"}
+                  {loading
+                    ? "Sending"
+                    : success
+                      ? "Success, Please Wait To Send More"
+                      : "Send Message"}
                 </button>
               </form>
             </div>
