@@ -59,15 +59,6 @@ body {
   line-height: 2rem;
 }
 
-@font-face {
-  font-family: "RenoMono";
-  src: url("../lib/LiberationMono-Regular.ttf") format("truetype");
-  font-style: normal;
-
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
 .nav-menu {
   z-index: 1000;
   width: 0%;
