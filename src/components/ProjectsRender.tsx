@@ -28,11 +28,11 @@ export default function ProjectsRender({ project, type }: ProjectProps) {
                   <Category category={data.category as CategoryName} />
 
                   <div className="flex space-x-4 text-2xl">
-                    <Link href={`/${type}/${data.slug}`}>
+                    <Link href={`/${data.websiteUrl ?? ""}`}>
                       <RiExternalLinkLine className="hover:scale-110" />
                     </Link>
 
-                    <Link href={`${data.githubUrl}`}>
+                    <Link href={`${data.githubUrl ?? ""}`}>
                       <RiGithubLine className="hover:scale-110" />
                     </Link>
                   </div>

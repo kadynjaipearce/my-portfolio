@@ -5,7 +5,7 @@ import { BlogpostProps } from "@/lib/types";
 import { FaArrowRight } from "react-icons/fa";
 import { CategoryName } from "@/lib/types";
 
-export default function BlogRender({ blog, type }: BlogpostProps) {
+export default function BlogRender({ blog }: BlogpostProps) {
   return (
     <div className="px-6 py-10">
       <div className="-my-8 divide-y-4 divide-gray-100">
@@ -26,7 +26,7 @@ export default function BlogRender({ blog, type }: BlogpostProps) {
                 </h2>
                 <p className="">{data.body}</p>
                 <Link
-                  href={`/${type}/${data.slug}`}
+                  href={`/${data.websiteUrl}`}
                   className="mt-4 inline-flex items-center font-bold leading-8"
                 >
                   Learn More
