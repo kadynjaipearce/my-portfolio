@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://acme.com/learning",
+      url: "https://kadynpearce.dev/projects",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
