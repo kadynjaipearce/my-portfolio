@@ -26,10 +26,9 @@ export default function Page() {
     if (loading) return;
 
     setLoading(true);
-    setErrorMessage(""); // Reset error message state
+    setErrorMessage("");
     try {
       const res = await fetch("/api/send-email", {
-        // Use relative URL for API calls
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,17 +39,16 @@ export default function Page() {
       const result = await res.json();
 
       if (!res.ok) {
-        throw new Error(result.message || "Failed to send email"); // Use server-provided message or a default one
+        throw new Error(result.message || "Failed to send email");
       }
 
-      // If successful, reset form and possibly set success message
       setData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-      // Ensure loading is always reset
+
       setSuccess(true);
     } catch (error: unknown) {
       console.error(error);

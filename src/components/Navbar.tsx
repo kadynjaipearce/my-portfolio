@@ -8,7 +8,6 @@ import { navItemTypes } from "@/lib/types";
 const navItems: navItemTypes[] = [
   { title: "/Home", url: "/" },
   { title: "/Projects", url: "/projects" },
-  { title: "/Learning", url: "/learning" },
   { title: "/Contact-Me", url: "/#contact" },
 ];
 
@@ -87,11 +86,10 @@ export default function Navbar() {
               })}
             </div>
             <button
-              onClick={() => window.open("/kadyn.pdf", "_blank")}
               className={`inter mx-4 flex rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] `}
             >
               <span className="flex w-full justify-between rounded bg-black px-4 py-[10px] text-white lg:py-[4px]">
-                <div className="">Download My Resume</div>
+                Download Resume
                 <HiDownload className="ml-3 lg:mt-[8px]" />
               </span>
             </button>

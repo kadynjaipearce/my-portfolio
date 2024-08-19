@@ -6,7 +6,10 @@ import { ProjectProps } from "@/lib/types";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 
-export default function ProjectsRender({ project, type }: ProjectProps) {
+export default function ProjectsRender({
+  project,
+  type,
+}: ProjectProps): React.ReactNode {
   return (
     <div className="-my-8 divide-y-4 divide-gray-100 px-6">
       {project.map((data) => {
@@ -28,11 +31,11 @@ export default function ProjectsRender({ project, type }: ProjectProps) {
                   <Category category={data.category as CategoryName} />
 
                   <div className="flex space-x-4 text-2xl">
-                    <Link href={`/${data.websiteUrl ?? ""}`}>
+                    <Link href={data.externalUrl ?? ""}>
                       <RiExternalLinkLine className="hover:scale-110" />
                     </Link>
 
-                    <Link href={`${data.githubUrl ?? ""}`}>
+                    <Link href={data.githubUrl ?? ""}>
                       <RiGithubLine className="hover:scale-110" />
                     </Link>
                   </div>

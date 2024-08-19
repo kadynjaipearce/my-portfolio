@@ -1,10 +1,4 @@
-import { PrismaClient } from "@prisma/client";
-import { FaBirthdayCake } from "react-icons/fa";
-const prisma = new PrismaClient();
-
-export default prisma;
-
-function calculateAge(birthDate: string) {
+export function calculateAge(birthDate: string) {
   const today = new Date();
   const birth = new Date(birthDate);
 

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Container from "@/components/Container";
 
-export default function Education() {
+export default function Education(): React.ReactNode {
   return (
     <Container mobileFull={true}>
       <div className="mt-40">

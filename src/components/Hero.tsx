@@ -63,16 +63,13 @@ export default function Hero() {
         <div className="hidden w-2/5 lg:block">
           <div>
             <div className="h-[580px] w-full rounded-lg bg-gray-900 p-4 text-white shadow-lg">
-              {/* Mimic of a macOS window toolbar */}
               <div className="mb-4 flex justify-between">
                 <div className="flex space-x-2">
-                  {/* Window controls */}
                   <div className="h-3 w-3 rounded-full bg-gray-950 duration-200 ease-in-out hover:cursor-pointer hover:bg-red-500"></div>
                   <div className="h-3 w-3 rounded-full bg-gray-950 duration-200 ease-in-out hover:cursor-pointer hover:bg-yellow-500"></div>
                   <div className="h-3 w-3 rounded-full bg-gray-950 duration-200 ease-in-out hover:cursor-pointer hover:bg-green-500"></div>
                 </div>
               </div>
-              {/* Content area */}
               <div>
                 <pre>
                   <code className="language-cpp">

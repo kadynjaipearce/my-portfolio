@@ -1,7 +1,8 @@
 import React from "react";
-import prisma from "@/lib/utils";
 import Container from "@/components/Container";
 import ProjectsRender from "@/components/ProjectsRender";
+import { getDataFromDB } from "@/lib/query";
+import "dotenv/config";
 
 export const metadata = {
   title: "projects",
@@ -10,25 +11,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const projects = await prisma.project.findMany({
-    orderBy: {
-      createdAt: "asc",
-    },
-    select: {
-      id: true,
-      slug: true,
-      img: true,
-      title: true,
-      body: true,
-      html: false,
-      category: true,
-      githubUrl: true,
-      websiteUrl: true,
-      techStack: true,
-      createdAt: true,
-    },
-  });
-
+  const projects = await getDataFromDB();
   return (
     <Container mobileFull={true}>
       <div className="mb-10 min-h-screen lg:mt-10">
@@ -45,8 +28,7 @@ export default async function Page() {
             </h2>
           </div>
         </div>
-
-        <ProjectsRender project={projects} type="projects" />
+        <ProjectsRender project={projects} type="projects"></ProjectsRender>
       </div>
     </Container>
   );
