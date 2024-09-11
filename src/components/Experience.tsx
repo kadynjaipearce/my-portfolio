@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import Category from "@/components/Category";
-import { CategoryName, ProjectData } from "@/lib/types";
+import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 import { getDataFromDB } from "@/lib/query";
 
@@ -33,10 +33,10 @@ export default async function Experience() {
                 <div className="flex justify-between">
                   <Category category={item.category as CategoryName} />
                   <div className="mt-1 flex space-x-4 text-2xl">
-                    <Link href={`/projects/${item.slug}`}>
+                    <Link href={item.externalUrl ?? ""}>
                       <RiExternalLinkLine className="hover:scale-110" />
                     </Link>
-                    <Link href={`${item.githubUrl}`}>
+                    <Link href={item.githubUrl ?? ""}>
                       <RiGithubLine className="hover:scale-110" />
                     </Link>
                   </div>

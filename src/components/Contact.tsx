@@ -21,8 +21,8 @@ export default function Page() {
     setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  async function handleSendEmail(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleSendEmail(event: React.FormEvent) {
+    event.preventDefault();
     if (loading) return;
 
     setLoading(true);
