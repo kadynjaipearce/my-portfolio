@@ -5,10 +5,11 @@ import Container from "@/components/Container";
 import Category from "@/components/Category";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
-import { getDataFromDB } from "@/lib/query";
+
+/*
 
 export default async function Experience() {
-  const items = await getDataFromDB();
+  const items = 
 
   return (
     <Container>
@@ -53,3 +54,5 @@ export default async function Experience() {
     </Container>
   );
 }
+
+*/

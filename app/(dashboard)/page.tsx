@@ -1,5 +1,5 @@
 import React from "react";
-import type { Schema } from "../../../amplify/data/resource";
+import type { Schema } from "@/amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
 const client = generateClient<Schema>();
@@ -10,7 +10,7 @@ export default function page() {
       title: "Test",
       img: "Test",
       body: "Test",
-      category: "Test",
+      category: "Web_Development",
       githubUrl: "Test",
       externalUrl: "Test",
     });

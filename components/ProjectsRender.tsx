@@ -2,21 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/Category";
-import { ProjectProps } from "@/lib/types";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
+import { Schema } from "@/amplify/data/resource";
 
-export default function ProjectsRender({
-  project,
-  type,
-}: ProjectProps): React.ReactNode {
+export default function ProjectsRender({project}: {project: Schema["Project"]["type"][]}): React.ReactNode {
   return (
     <div className="-my-8 divide-y-4 divide-gray-100 px-6">
       {project.map((data) => {
         return (
           <div className="py-10" key={data.id}>
             <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
-              <Link href={`/${type}/${data.slug}`} className="max-w-lg">
+              <Link href={`/`} className="max-w-lg">
                 <Image
                   src={`/${data.img}`}
                   alt=""

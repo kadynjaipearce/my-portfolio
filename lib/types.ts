@@ -28,14 +28,14 @@ export interface ErrorData {
 }
 
 export interface ProjectData {
-  img: string;
-  externalUrl: string | null;
-  category: string;
-  slug: string;
   id: string;
+  title: string | null;
+  body: string | null ;
+  img: string | null;
+  externalUrl: string | null;
+  category: "Web_Development" | "Blockchain Development" | "Software Engineering";
   githubUrl: string | null;
-  title: string;
-  body: string;
+
 }
 
 export interface ProjectProps {

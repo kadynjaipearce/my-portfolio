@@ -1,17 +1,27 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Container from "@/components/Container";
 import ProjectsRender from "@/components/ProjectsRender";
-import { getDataFromDB } from "@/lib/query";
-import "dotenv/config";
+import { type Schema } from "@/amplify/data/resource";
+import { generateClient } from "aws-amplify/api";
 
-export const metadata = {
-  title: "projects",
-  description:
-    "This is a showcase of my favorite personal coding projects, each a unique exploration of technology and curiosity. From initial concept to final code, see how passion drives my development journey.",
-};
 
-export default async function Page() {
-  const projects = await getDataFromDB();
+const client = generateClient<Schema>();
+
+export default function Page() {
+  const [projects, setProjects] = useState<Schema["Project"]["type"][]>([])
+  
+  const fetchProjects = async () => {
+    const {data: items, errors}= await client.models.Project.list({
+      limit: 10000
+    })
+    setProjects(items)
+  }
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+  
   return (
     <Container mobileFull={true}>
       <div className="mb-10 min-h-screen lg:mt-10">
@@ -28,7 +38,15 @@ export default async function Page() {
             </h2>
           </div>
         </div>
-        <ProjectsRender project={projects} type="projects"></ProjectsRender>
+      {projects.length}
+      {projects.map((e) => {
+        return (
+          <div>
+            {e.id}
+          </div>
+        )
+      })}
+      <ProjectsRender project={projects}></ProjectsRender>
       </div>
     </Container>
   );

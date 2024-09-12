@@ -9,11 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.632.0",
-    "@aws-sdk/client-s3": "^3.633.0",
-    "@aws-sdk/lib-dynamodb": "^3.632.0",
-    "@aws-sdk/s3-request-presigner": "^3.633.0",
-    "@prisma/client": "^5.4.2",
     "@tailwindcss/typography": "^0.5.10",
     "aws-amplify": "^6.6.0",
     "cors": "^2.8.5",
@@ -30,15 +25,13 @@
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.2.1",
-    "@aws-amplify/backend-cli": "^1.2.5",
-    "@aws-sdk/util-dynamodb": "^3.632.0",
+    "@aws-amplify/backend-cli": "^1.2.6",
     "@types/cors": "^2.8.17",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/validator": "^13.11.8",
     "autoprefixer": "^10.0.1",
-    "aws-sdk": "^2.1677.0",
     "eslint": "^8",
     "eslint-config-next": "^14.1.0",
     "npm": "^10.8.2",
