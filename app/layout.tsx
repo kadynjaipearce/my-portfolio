@@ -1,13 +1,9 @@
-"use client"
+"use client";
 import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Amplify } from "aws-amplify";
-import outputs from "@/amplify_outputs.json";
-
-Amplify.configure(outputs, {ssr: true});
-
+import ConfigAmplifyClientSide from "@/components/configAmplify";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -17,6 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en-au">
       <body>
+        <ConfigAmplifyClientSide></ConfigAmplifyClientSide>
         <Navbar />
         {children}
         <Footer />

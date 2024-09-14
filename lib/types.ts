@@ -30,12 +30,14 @@ export interface ErrorData {
 export interface ProjectData {
   id: string;
   title: string | null;
-  body: string | null ;
+  body: string | null;
   img: string | null;
   externalUrl: string | null;
-  category: "Web_Development" | "Blockchain Development" | "Software Engineering";
+  category:
+    | "Web_Development"
+    | "Blockchain Development"
+    | "Software Engineering";
   githubUrl: string | null;
-
 }
 
 export interface ProjectProps {
@@ -44,7 +46,7 @@ export interface ProjectProps {
 }
 
 export type CategoryName =
-  | "Software Engineering"
-  | "Web Development"
-  | "Blockchain Development"
+  | "Software_Engineering"
+  | "Web_Development"
+  | "Blockchain_Development"
   | "Other";
