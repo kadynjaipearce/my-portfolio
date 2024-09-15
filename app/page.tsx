@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Marquee from "@/components/Marquee";
-import Test from "@/components/test";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -11,9 +11,8 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Education></Education>
-     
+      <Experience></Experience>
       <Contact />
-      <Test></Test>
     </main>
   );
 }

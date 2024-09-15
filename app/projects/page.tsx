@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from "react";
 import Container from "@/components/Container";
+import ErrorComponent from "@/components/ErrorComponent";
 import ProjectsRender from "@/components/ProjectsRender";
-import { type Schema } from "@/amplify/data/resource";
-import { generateClient } from "aws-amplify/api";
 import { cookiesClient } from "@/utils/amplify-utils";
 
-const client = generateClient<Schema>();
-
 export default async function Page() {
-  const { data: projects, errors } = await cookiesClient.models.Project.list({
-    limit: 10000,
-  });
+  let projects = null;
+  try {
+    const { data: projectData, errors } =
+      await cookiesClient.models.Project.list({
+        limit: 100,
+      });
+
+    if (errors) {
+      throw new Error(errors.toString());
+    }
+
+    projects = projectData;
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <Container mobileFull={true}>
@@ -28,7 +36,11 @@ export default async function Page() {
             </h2>
           </div>
         </div>
-        <ProjectsRender project={projects}></ProjectsRender>
+        {projects && projects?.length == 0 ? (
+          <ErrorComponent error="No projects found at the moment. Please check back later!"></ErrorComponent>
+        ) : (
+          projects && <ProjectsRender project={projects}></ProjectsRender>
+        )}
       </div>
     </Container>
   );

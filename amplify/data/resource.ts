@@ -1,10 +1,4 @@
-import {
-  a,
-  defineData,
-  defineAuth,
-  secret,
-  type ClientSchema,
-} from "@aws-amplify/backend";
+import { a, defineData, type ClientSchema } from "@aws-amplify/backend";
 
 const schema = a.schema({
   Project: a
@@ -21,7 +15,7 @@ const schema = a.schema({
       githubUrl: a.string(),
       externalUrl: a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey()])
+    .authorization((allow) => [allow.publicApiKey().to(["read"])])
     .identifier(["id"]),
 });
 
@@ -30,7 +24,7 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: "userPool",
+    defaultAuthorizationMode: "apiKey",
     apiKeyAuthorizationMode: { expiresInDays: 30 },
   },
 });
