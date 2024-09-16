@@ -55,9 +55,6 @@ export default function Page() {
       setErrorMessage((error as Error).message);
     } finally {
       setLoading(false);
-      setTimeout(() => {
-        setSuccess(false);
-      }, 10000);
     }
   }
 
@@ -132,9 +129,9 @@ export default function Page() {
                   type="button"
                   className={`${
                     loading
-                      ? "bg-green-500"
+                      ? "bg-blue-400"
                       : success
-                        ? "bg-red-500"
+                        ? "bg-green-500"
                         : "bg-neutral-800 hover:bg-neutral-900"
                   } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out  disabled:cursor-not-allowed`}
                 >
@@ -151,11 +148,7 @@ export default function Page() {
                       data-original="#000000"
                     />
                   </svg>
-                  {loading
-                    ? "Sending"
-                    : success
-                      ? "Success, Please Wait To Send More"
-                      : "Send Message"}
+                  {loading ? "Sending" : success ? `Sent` : "Send Message"}
                 </button>
               </form>
             </div>

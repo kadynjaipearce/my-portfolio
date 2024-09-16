@@ -1,10 +1,10 @@
-import { getUrl } from "aws-amplify/storage";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { getUrl } from "aws-amplify/storage";
 import { HiDownload } from "react-icons/hi";
+import Link from "next/link";
 
 function DownloadResume() {
-  const [link, setLink] = useState<any>(null);
+  const [link, setLink] = useState<URL | null>(null);
 
   const resumeDownloadLink = async () => {
     try {
