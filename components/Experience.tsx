@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 import Category from "@/components/Category";
-import { CategoryName } from "@/lib/types";
+import { CategoryName } from "@/utils/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 import { cookiesClient } from "@/utils/amplify-utils";
-import ErrorComponent from "./ErrorComponent";
+import ErrorComponent from "@/components/ErrorComponent";
 
 export default async function Experience() {
   let projects = null;

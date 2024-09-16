@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import validator from "validator";
-import { RequestBody, ErrorData } from "@/lib/types";
+import { RequestBody, ErrorData } from "@/utils/types";
 import { Resend } from "resend";
 import { SelfEmailTemplate } from "@/components/SelfEmailTemplate";
 import { UserEmailTemplate } from "@/components/UserEmailTemplate";

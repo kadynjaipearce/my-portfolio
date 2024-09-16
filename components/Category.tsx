@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryName } from "@/lib/types";
+import { CategoryName } from "@/utils/types";
 
 const categoryColors: Record<CategoryName, string> = {
   Software_Engineering: "border-blue-200 bg-blue-200 text-blue-600",

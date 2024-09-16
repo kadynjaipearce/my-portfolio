@@ -1,12 +1,9 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/Category";
-import { CategoryName } from "@/lib/types";
+import { CategoryName } from "@/utils/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 import { Schema } from "@/amplify/data/resource";
-import { getUrl } from "aws-amplify/storage";
 
 export default function ProjectsRender({
   project,

@@ -1,6 +1,6 @@
 import React from "react";
 import { MdErrorOutline } from "react-icons/md";
-import Container from "./Container";
+import Container from "@/components/Container";
 
 export default function ErrorComponent({ error }: { error: string }) {
   return (

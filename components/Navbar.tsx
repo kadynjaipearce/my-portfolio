@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import NavItem from "@/components/Navitem";
-import { navItemTypes } from "@/lib/types";
-import DownloadResume from "./DownloadResume";
+import { navItemTypes } from "@/utils/types";
+import DownloadResume from "@/components/DownloadResume";
 
 const navItems: navItemTypes[] = [
   { title: "/Home", url: "/" },

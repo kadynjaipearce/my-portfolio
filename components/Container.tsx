@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerProps } from "@/lib/types";
+import { ContainerProps } from "@/utils/types";
 
 const Container: React.FC<ContainerProps> = ({ children, mobileFull }) => {
   return (
