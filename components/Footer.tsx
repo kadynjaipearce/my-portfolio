@@ -6,7 +6,7 @@ import { RiGithubLine, RiInstagramLine, RiLinkedinFill } from "react-icons/ri";
 export default function Footer() {
   return (
     <footer className="border-t py-4">
-      <Container>
+      <Container mobileFull={false}>
         <div className="mx-auto flex flex-col items-center justify-between space-y-4 lg:flex-row lg:space-y-0">
           <div className="flex flex-col items-center space-x-0 space-y-4 lg:flex-row lg:space-y-0">
             <div className=" text-center font-semibold md:text-left">

@@ -9,10 +9,11 @@ export const UserEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
   <body
     style={{
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "'Helvetica Neue', Arial, sans-serif",
       margin: "0",
       padding: "0",
-      backgroundColor: "#f4f4f4",
+      backgroundColor: "#f0f4f8",
+      lineHeight: "1.6",
     }}
   >
     <table
@@ -21,48 +22,103 @@ export const UserEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
       cellPadding="0"
       style={{
         maxWidth: "600px",
-        margin: "auto",
+        margin: "20px auto",
         backgroundColor: "#ffffff",
-        border: "1px solid #dddddd",
+        border: "none",
+        borderRadius: "8px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        overflow: "hidden",
       }}
     >
       <tr>
-        <td style={{ padding: "20px", textAlign: "center" }}>
-          <h1 style={{ color: "#333333" }}>Hello {firstName},</h1>
-          <p style={{ color: "#555555" }}>
-            Thank you for reaching out. I will try to reply to this email asap.
+        <td
+          style={{
+            padding: "20px",
+            textAlign: "center",
+            background: "linear-gradient(to right, #60a5fa, #a855f7)",
+          }}
+        >
+          <h1 style={{ color: "#ffffff", margin: "0" }}>
+            Thank you {firstName}.,
+          </h1>
+        </td>
+      </tr>
+      <tr>
+        <td style={{ padding: "20px 30px", color: "#333333" }}>
+          <p style={{ fontSize: "16px", marginBottom: "20px" }}>
+            Thank you for reaching out! I will try to reply to this email as
+            soon as possible.
           </p>
-          {/* Main content goes here */}
-          <p style={{ color: "#555555" }}>
-            In the meantime should you have any further questions, please
-            don&apos;t hesitate to reply to this email or contact me via my
-            socials below.
+          <p style={{ fontSize: "16px", marginBottom: "20px" }}>
+            In the meantime, if you have any further questions, don&apos;t
+            hesitate to reply to this email or contact me via my social media
+            channels below.
           </p>
         </td>
       </tr>
       <tr>
-        <td style={{ padding: "20px", textAlign: "center" }}>
-          <p style={{ color: "#999999", fontSize: "12px" }}>Follow me on:</p>
+        <td
+          style={{
+            padding: "20px 30px",
+            textAlign: "center",
+            backgroundColor: "#f7f7f7",
+          }}
+        >
+          <p
+            style={{ fontSize: "14px", color: "#666666", marginBottom: "10px" }}
+          >
+            Follow me on:
+          </p>
           <a
             href="https://github.com/kadynjaipearce"
-            style={{ textDecoration: "none", color: "#0077cc" }}
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              fontWeight: "bold",
+              margin: "0 10px",
+            }}
           >
-            Github
+            GitHub
           </a>
-          |{" "}
+          |
           <a
             href="https://www.linkedin.com/in/kadynpearce/"
-            style={{ textDecoration: "none", color: "#0077cc" }}
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              fontWeight: "bold",
+              margin: "0 10px",
+            }}
           >
-            Linkedin
+            LinkedIn
           </a>
-          |{" "}
+          |
           <a
             href="https://www.instagram.com/kadynpearce/"
-            style={{ textDecoration: "none", color: "#0077cc" }}
+            style={{
+              textDecoration: "none",
+              color: "#000",
+              fontWeight: "bold",
+              margin: "0 10px",
+            }}
           >
             Instagram
           </a>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style={{
+            background: "linear-gradient(to right, #60a5fa, #a855f7)",
+            padding: "20px",
+            textAlign: "center",
+            color: "#ffffff",
+            fontSize: "12px",
+          }}
+        >
+          <p style={{ margin: "0" }}>
+            © {new Date().getFullYear()} Kadyn-Jai Pearce. All rights reserved.
+          </p>
         </td>
       </tr>
     </table>
