@@ -4,9 +4,10 @@ import { RequestBody, ErrorData } from "@/lib/types";
 import { Resend } from "resend";
 import { SelfEmailTemplate } from "@/components/SelfEmailTemplate";
 import { UserEmailTemplate } from "@/components/UserEmailTemplate";
+import "dotenv/config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const domain = process.env.EMAIL_DOMAIN ?? "";
+const domain = process.env.EMAIL_DOMAIN ?? "email@kadynpearce.dev";
 
 export async function POST(request: NextRequest) {
   try {
@@ -45,6 +46,8 @@ export async function POST(request: NextRequest) {
         message: message,
       }) as React.ReactElement,
     });
+
+    console.log(email);
 
     const userEmail = await resend.emails.send({
       from: domain,

@@ -1,12 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Category from "@/components/Category";
 import { CategoryName } from "@/lib/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
 import { Schema } from "@/amplify/data/resource";
+import { getUrl } from "aws-amplify/storage";
 
-export default function ProjectsRender({project}: {project: Schema["Project"]["type"][]}): React.ReactNode {
+export default function ProjectsRender({
+  project,
+}: {
+  project: Schema["Project"]["type"][];
+}): React.ReactNode {
   return (
     <div className="-my-8 divide-y-4 divide-gray-100 px-6">
       {project.map((data) => {
@@ -15,7 +21,7 @@ export default function ProjectsRender({project}: {project: Schema["Project"]["t
             <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
               <Link href={`/`} className="max-w-lg">
                 <Image
-                  src={`/${data.img}`}
+                  src={`/data.img`}
                   alt=""
                   className="w-full rounded-xl"
                   width={10000}

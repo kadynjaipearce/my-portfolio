@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import NavItem from "@/components/Navitem";
-import { HiDownload } from "react-icons/hi";
 import { navItemTypes } from "@/lib/types";
+import DownloadResume from "./DownloadResume";
 
 const navItems: navItemTypes[] = [
   { title: "/Home", url: "/" },
@@ -85,14 +85,7 @@ export default function Navbar() {
                 );
               })}
             </div>
-            <button
-              className={`inter mx-4 flex rounded-md bg-gradient-to-r from-blue-400 to-purple-500 p-[3px] `}
-            >
-              <span className="flex w-full justify-between rounded bg-black px-4 py-[10px] text-white lg:py-[4px]">
-                Download Resume
-                <HiDownload className="ml-3 lg:mt-[8px]" />
-              </span>
-            </button>
+            <DownloadResume></DownloadResume>
           </div>
         </div>
       </div>
