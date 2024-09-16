@@ -11,6 +11,7 @@ const schema = a.schema({
         "Web_Development",
         "Blockchain_Development",
         "Software_Engineering",
+        "Other",
       ]),
       githubUrl: a.string().required(),
       externalUrl: a.string().required(),

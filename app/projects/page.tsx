@@ -17,7 +17,7 @@ export default async function Page() {
 
     projects = projectData;
   } catch (error) {
-    console.log(error);
+    return <ErrorComponent error={`Unexpected Error Occurred: ${error}`} />;
   }
 
   return (
@@ -37,9 +37,9 @@ export default async function Page() {
           </div>
         </div>
         {projects && projects?.length == 0 ? (
-          <ErrorComponent error="No projects found at the moment. Please check back later!"></ErrorComponent>
+          <ErrorComponent error="No projects found at the moment. Please check back later!" />
         ) : (
-          projects && <ProjectsRender project={projects}></ProjectsRender>
+          projects && <ProjectsRender project={projects} />
         )}
       </div>
     </Container>

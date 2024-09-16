@@ -47,8 +47,6 @@ export async function POST(request: NextRequest) {
       }) as React.ReactElement,
     });
 
-    console.log(email);
-
     const userEmail = await resend.emails.send({
       from: domain,
       to: email,
@@ -63,7 +61,6 @@ export async function POST(request: NextRequest) {
       { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {
-    console.log(error);
     return NextResponse.json(
       { success: false, message: "An unexpected error occurred" },
       { status: 500, headers: { "Content-Type": "application/json" } },

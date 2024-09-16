@@ -131,9 +131,9 @@ export default function Page() {
                     loading
                       ? "bg-blue-400"
                       : success
-                        ? "bg-green-500"
+                        ? "bg-green-600"
                         : "bg-neutral-800 hover:bg-neutral-900"
-                  } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out  disabled:cursor-not-allowed`}
+                  } flex w-full items-center justify-center rounded-md px-4 py-3 text-sm font-semibold text-white duration-200 ease-in-out disabled:cursor-not-allowed`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

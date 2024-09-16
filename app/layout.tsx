@@ -1,8 +1,7 @@
 "use client";
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ConfigAmplifyClientSide from "@/components/configAmplify";
+import ConfigureAmplifyClientSide from "@/components/ConfigureAmplify";
 import "./globals.css";
 
 export default function RootLayout({
@@ -13,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en-au">
       <body>
-        <ConfigAmplifyClientSide></ConfigAmplifyClientSide>
+        <ConfigureAmplifyClientSide />
         <Navbar />
         {children}
         <Footer />
