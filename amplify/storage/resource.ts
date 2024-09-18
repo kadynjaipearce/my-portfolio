@@ -9,7 +9,7 @@ export const storage = defineStorage({
     ],
     "images/*": [
       allow.guest.to(["get", "list"]),
-      allow.authenticated.to(["read", "write"]),
+      allow.authenticated.to(["read", "write", "delete"]),
     ],
   }),
 });

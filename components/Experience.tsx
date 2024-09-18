@@ -11,18 +11,13 @@ import ErrorComponent from "@/components/ErrorComponent";
 export default async function Experience() {
   let projects = null;
   try {
-    const { data: projectData, errors } =
-      await cookiesClient.models.Project.list({
-        limit: 2,
-      });
-
-    if (errors) {
-      throw new Error(errors.toString());
-    }
+    const { data: projectData } = await cookiesClient.models.Project.list({
+      limit: 2,
+    });
 
     projects = projectData;
   } catch (error) {
-    console.log(error);
+    return <ErrorComponent error="error"></ErrorComponent>;
   }
 
   if (projects && projects.length == 0) {

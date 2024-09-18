@@ -8,7 +8,7 @@ import {
   RiLinkedinBoxFill,
 } from "react-icons/ri";
 import "highlight.js/styles/github-dark.css";
-import { heroData } from "@/lib/utils";
+import { heroData } from "@/utils/frontend-utils";
 
 export default function Hero() {
   const code = heroData;

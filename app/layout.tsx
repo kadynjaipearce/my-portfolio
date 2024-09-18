@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ConfigureAmplifyClientSide from "@/components/ConfigureAmplify";
-import "./globals.css";
+import "./global.css";
 
 export default function RootLayout({
   children,

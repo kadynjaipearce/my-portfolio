@@ -1,3 +1,4 @@
+"use clientb";
 import React, { useEffect, useState } from "react";
 import { getUrl } from "aws-amplify/storage";
 import { HiDownload } from "react-icons/hi";
@@ -12,6 +13,7 @@ function DownloadResume() {
         path: "media/resume.pdf",
         options: {
           validateObjectExistence: true,
+          expiresIn: 3600,
         },
       });
       setLink(signedUrl.url);

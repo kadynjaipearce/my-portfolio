@@ -7,9 +7,11 @@ export default async function Page() {
   let projects = null;
   try {
     const { data: projectData, errors } =
-      await cookiesClient.models.Project.list({
-        limit: 100,
-      });
+      await cookiesClient.models.Project.list();
+
+    console.log(projectData.length);
+
+    console.log(errors);
 
     if (errors) {
       throw new Error(errors.toString());
