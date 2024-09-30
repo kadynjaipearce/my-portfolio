@@ -7,7 +7,9 @@ export default async function Page() {
   let projects = null;
   try {
     const { data: projectData, errors } =
-      await cookiesClient.models.Project.list();
+      await cookiesClient.models.Project.list({
+        authMode: "apiKey",
+      });
 
     console.log(projectData.length);
 

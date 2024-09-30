@@ -1,75 +1,65 @@
 import Category from "@/components/Category";
 import { AuthGetCurrentUserServer, cookiesClient } from "@/utils/amplify-utils";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { CategoryName } from "@/utils/types";
-import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
-import CreateProject from "@/components/CreateProject";
+import { RiGithubLine, RiExternalLinkLine, RiCloseFill } from "react-icons/ri";
 import { DefaultFileUploaderExample } from "@/components/FileUploader";
+import { list, remove } from "aws-amplify/storage/server";
+import { runWithAmplifyServerContext } from "@/utils/amplify-utils";
+import Container from "@/components/Container";
+import { revalidatePath } from "next/cache";
+import { cookies } from "next/headers";
 
-async function page() {
-  const user = await AuthGetCurrentUserServer();
-  const { data: projects, errors } = await cookiesClient.models.Project.list({
-    limit: 100,
+// Server action for handling form submission
+async function handleCreateProject(formData: FormData) {
+  const title = formData.get("title")?.toString() || "";
+  const description = formData.get("description")?.toString() || "";
+  const externalUrl = formData.get("externalUrl")?.toString() || "";
+  const githubUrl = formData.get("githubUrl")?.toString() || "";
+
+  // Perform actions here like saving to the database or API
+  console.log("Project created:", {
+    title,
+    description,
+    externalUrl,
+    githubUrl,
   });
 
-  console.log(errors);
-
-  if (!user) {
-    return <div>go away</div>;
-  }
-  return (
-    <div>
-      <h1>Welcome {user?.username}</h1>
-      <DefaultFileUploaderExample></DefaultFileUploaderExample>
-      <CreateProject />
-
-      <div className="-my-8 divide-y-4 divide-gray-100 px-6">
-        {projects &&
-          projects.map((data) => {
-            return (
-              <div className="py-10" key={data.id}>
-                <div className="flex flex-col items-center justify-between gap-6 lg:flex-row-reverse ">
-                  <Link href={`/`} className="max-w-lg">
-                    <Image
-                      src={`/data.img`}
-                      alt=""
-                      className="w-full rounded-xl"
-                      width={10000}
-                      height={10000}
-                    />
-                  </Link>
-
-                  <div className="max-w-3xl space-y-6 text-left">
-                    <div className="flex justify-between">
-                      <Category category={data.category as CategoryName} />
-
-                      <div className="flex space-x-4 text-2xl">
-                        <Link href={data.externalUrl ?? ""}>
-                          <RiExternalLinkLine className="hover:scale-110" />
-                        </Link>
-
-                        <Link href={data.githubUrl ?? ""}>
-                          <RiGithubLine className="hover:scale-110" />
-                        </Link>
-                      </div>
-                    </div>
-                    <h3 className="text-heading text-left text-3xl font-bold text-gray-950 lg:text-4xl">
-                      {data.title}
-                    </h3>
-
-                    <p className="text-md text-left text-gray-950">
-                      {data.body}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      </div>
-    </div>
-  );
+  // Optionally revalidate the page to fetch new data
+  revalidatePath("/");
 }
 
-export default page;
+export default async function Page() {
+  const user = await AuthGetCurrentUserServer();
+
+  const images = await runWithAmplifyServerContext({
+    nextServerContext: { cookies },
+    operation: (contextSpec) =>
+      list(contextSpec, {
+        path: "images/",
+        options: {
+          listAll: true,
+        },
+      }),
+  });
+
+  async function handleDeleteFile(path: string) {
+    "use server";
+    try {
+      await runWithAmplifyServerContext({
+        nextServerContext: { cookies },
+        operation(contextSpec) {
+          remove(contextSpec, {
+            path: path,
+          });
+        },
+      });
+    } catch (error) {
+      return;
+    }
+  }
+
+  return (
+    <Container>
+      <div className="">{user?.signInDetails?.loginId}</div>
+    </Container>
+  );
+}

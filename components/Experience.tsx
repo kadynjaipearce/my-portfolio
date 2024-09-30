@@ -13,6 +13,7 @@ export default async function Experience() {
   try {
     const { data: projectData } = await cookiesClient.models.Project.list({
       limit: 2,
+      authMode: "apiKey",
     });
 
     projects = projectData;

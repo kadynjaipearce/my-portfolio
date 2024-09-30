@@ -4,12 +4,12 @@ export const storage = defineStorage({
   name: "amplifyData",
   access: (allow) => ({
     "media/*": [
-      allow.guest.to(["get", "list"]),
+      allow.guest.to(["read"]),
       allow.authenticated.to(["read", "write"]),
     ],
     "images/*": [
-      allow.guest.to(["get", "list"]),
-      allow.authenticated.to(["read", "write", "delete"]),
+      allow.guest.to(["read"]),
+      allow.authenticated.to(["list", "get", "write", "delete"]),
     ],
   }),
 });

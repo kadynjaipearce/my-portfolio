@@ -17,7 +17,7 @@ const schema = a.schema({
       externalUrl: a.string().required(),
     })
     .authorization((allow) => [
-      allow.guest().to(["get", "list"]),
+      allow.publicApiKey().to(["get", "list"]),
       allow.authenticated().to(["create", "update", "get", "delete", "list"]),
     ])
     .identifier(["id"]),
@@ -28,6 +28,7 @@ export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: "userPool",
+    defaultAuthorizationMode: "identityPool",
+    apiKeyAuthorizationMode: {},
   },
 });

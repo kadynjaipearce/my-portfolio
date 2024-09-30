@@ -4,7 +4,6 @@ import { RequestBody, ErrorData } from "@/utils/types";
 import { Resend } from "resend";
 import { SelfEmailTemplate } from "@/components/SelfEmailTemplate";
 import { UserEmailTemplate } from "@/components/UserEmailTemplate";
-import "dotenv/config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const domain = process.env.EMAIL_DOMAIN ?? "email@kadynpearce.dev";
