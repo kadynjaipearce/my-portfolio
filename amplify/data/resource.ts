@@ -18,7 +18,9 @@ const schema = a.schema({
     })
     .authorization((allow) => [
       allow.publicApiKey().to(["get", "list"]),
-      allow.authenticated().to(["create", "update", "get", "delete", "list"]),
+      allow
+        .authenticated()
+        .to(["create", "update", "get", "delete", "list", "sync"]),
     ])
     .identifier(["id"]),
 });

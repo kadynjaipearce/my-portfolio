@@ -12,6 +12,7 @@ export const { runWithAmplifyServerContext } = createServerRunner({
 });
 
 export const cookiesClient = generateServerClientUsingCookies<Schema>({
+  authMode: "userPool", // no idea why this works but it does, aws docs are shit.
   config: outputs,
   cookies,
 });

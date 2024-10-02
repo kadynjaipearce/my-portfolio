@@ -5,10 +5,26 @@ import Container from "@/components/Container";
 import Category from "@/components/Category";
 import { CategoryName } from "@/utils/types";
 import { RiGithubLine, RiExternalLinkLine } from "react-icons/ri";
-import { cookiesClient } from "@/utils/amplify-utils";
+import {
+  cookiesClient,
+  runWithAmplifyServerContext,
+} from "@/utils/amplify-utils";
 import ErrorComponent from "@/components/ErrorComponent";
+import { getUrl } from "aws-amplify/storage/server";
+import { cookies } from "next/headers";
 
 export default async function Experience() {
+  async function getSignedUrl(imagePath: string) {
+    const res = await runWithAmplifyServerContext({
+      nextServerContext: { cookies },
+      operation: (contextSpec) =>
+        getUrl(contextSpec, {
+          path: `images/${imagePath}`,
+        }),
+    });
+
+    return res.url;
+  }
   let projects = null;
   try {
     const { data: projectData } = await cookiesClient.models.Project.list({
@@ -16,9 +32,24 @@ export default async function Experience() {
       authMode: "apiKey",
     });
 
-    projects = projectData;
+    if (!projectData || projectData.length === 0) {
+      return {
+        projects: null,
+        error: "No projects found at the moment. Please check back later!",
+      };
+    }
+
+    // Fetch signed URLs for the images
+    const projectsWithUrls = await Promise.all(
+      projectData.map(async (project: any) => ({
+        ...project,
+        signedImgUrl: await getSignedUrl(project.img),
+      })),
+    );
+
+    projects = projectsWithUrls;
   } catch (error) {
-    return <ErrorComponent error="error"></ErrorComponent>;
+    console.log(error);
   }
 
   if (projects && projects.length == 0) {
@@ -37,7 +68,7 @@ export default async function Experience() {
                 key={item.id}
                 className={`flex flex-col items-center justify-between gap-6 ${index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"}`}
               >
-                <Link href={""} className="max-w-lg">
+                <Link href={item.githubUrl} className="max-w-lg">
                   <Image
                     src={`/${item.img}`}
                     alt={`${item.title}`}
