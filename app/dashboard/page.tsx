@@ -1,5 +1,5 @@
 import { AuthGetCurrentUserServer, cookiesClient } from "@/utils/amplify-utils";
-import { list } from "aws-amplify/storage/server";
+import { list, remove } from "aws-amplify/storage/server";
 import { runWithAmplifyServerContext } from "@/utils/amplify-utils";
 import Container from "@/components/Container";
 import { cookies } from "next/headers";
@@ -9,6 +9,8 @@ import { redirect } from "next/navigation";
 import { FileUploader } from "@aws-amplify/ui-react-storage";
 import { CategoryName } from "@/utils/types";
 import { revalidatePath } from "next/cache";
+import { PiImagesBold, PiFolderBold, PiProjectorScreen } from "react-icons/pi";
+import FileDelete from "@/components/fileDelete";
 
 export default async function Page() {
   const user = await AuthGetCurrentUserServer();
@@ -41,6 +43,18 @@ export default async function Page() {
     },
   );
 
+  async function handleFileDelete(filePath: string) {
+    "use server";
+
+    const res = await runWithAmplifyServerContext({
+      nextServerContext: { cookies },
+      operation: (contextSpec) =>
+        remove(contextSpec, {
+          path: filePath,
+        }),
+    });
+  }
+
   async function handleCreateProject(formData: FormData) {
     "use server";
 
@@ -52,8 +66,6 @@ export default async function Page() {
       githubUrl: formData.get("githubUrl") as string,
       externalUrl: formData.get("externalUrl") as string,
     };
-
-    console.log(rawFormData);
 
     const { data: newProject, errors } =
       await cookiesClient.models.Project.create({
@@ -70,13 +82,10 @@ export default async function Page() {
 
   return (
     <Container>
-      <div className="col-span-2 flex min-h-screen flex-col">
-        <div className="fixed w-full max-w-xl rounded-lg">
+      <div className="flex min-h-screen">
+        <div className="fixed h-screen w-full max-w-lg space-y-6 overflow-y-auto">
           <DefaultFileUploaderExample />
-          <form
-            className="mt-6 max-w-md space-y-6"
-            action={handleCreateProject}
-          >
+          <form className="mt-6 space-y-6" action={handleCreateProject}>
             <input
               name="title"
               type="text"
@@ -133,22 +142,63 @@ export default async function Page() {
             </button>
           </form>
         </div>
-        <div className="col-span-2">
-          Projects
-          {projectData &&
-            projectData.map((i) => {
-              return <div key={i.id}>{i.title}</div>;
-            })}
-          Images
-          {images.items &&
-            images.items.map((item) => {
-              return <div key={item.path}>{item.path}</div>;
-            })}
-          Media
-          {media.items &&
-            media.items.map((item) => {
-              return <div key={item.path}>{item.path}</div>;
-            })}
+
+        <div className="ml-auto mt-10 w-full max-w-4xl overflow-y-auto">
+          <div className="space-y-6">
+            <h2 className="mb-2 text-xl font-bold">Projects</h2>
+            {projectData &&
+              projectData.map((i) => {
+                return (
+                  <div
+                    key={i.id}
+                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                  >
+                    <div>
+                      <PiProjectorScreen />
+                      <span>{i.title}</span>
+                    </div>
+
+                    <button className="rounded bg-red-500 px-3 py-1 text-white hover:bg-red-700">
+                      Delete
+                    </button>
+                  </div>
+                );
+              })}
+
+            {images.items &&
+              images.items.map((item) => {
+                return (
+                  <div
+                    key={item.path}
+                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                  >
+                    <div>
+                      <PiImagesBold />
+                      <span>{item.path}</span>
+                    </div>
+
+                    <FileDelete filePath={item.path} />
+                  </div>
+                );
+              })}
+
+            {media.items &&
+              media.items.map((item) => {
+                return (
+                  <div
+                    key={item.path}
+                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                  >
+                    <div className="">
+                      <PiFolderBold />
+                      <span>{item.path}</span>
+                    </div>
+
+                    <FileDelete filePath={item.path} />
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </Container>

@@ -8,7 +8,7 @@ export function DefaultFileUploaderExample() {
   const [selection, setSelection] = useState("images");
 
   return (
-    <div className="mt-8 max-w-md rounded-lg bg-white">
+    <div className="mt-8 max-w-lg rounded-lg bg-white">
       <div className="relative mb-4 h-12 w-full overflow-hidden rounded-md bg-neutral-200">
         <div
           className="absolute left-0 top-0 h-full bg-neutral-900 transition-all duration-300 ease-in-out"
