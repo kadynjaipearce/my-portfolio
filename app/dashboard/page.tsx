@@ -11,6 +11,7 @@ import { CategoryName } from "@/utils/types";
 import { revalidatePath } from "next/cache";
 import { PiImagesBold, PiFolderBold, PiProjectorScreen } from "react-icons/pi";
 import FileDelete from "@/components/fileDelete";
+import ProjectDelete from "@/components/projectDelete";
 
 export default async function Page() {
   const user = await AuthGetCurrentUserServer();
@@ -43,18 +44,6 @@ export default async function Page() {
     },
   );
 
-  async function handleFileDelete(filePath: string) {
-    "use server";
-
-    const res = await runWithAmplifyServerContext({
-      nextServerContext: { cookies },
-      operation: (contextSpec) =>
-        remove(contextSpec, {
-          path: filePath,
-        }),
-    });
-  }
-
   async function handleCreateProject(formData: FormData) {
     "use server";
 
@@ -82,8 +71,8 @@ export default async function Page() {
 
   return (
     <Container>
-      <div className="flex min-h-screen">
-        <div className="fixed h-screen w-full max-w-lg space-y-6 overflow-y-auto">
+      <div className="flex min-h-screen flex-col md:flex-row">
+        <div className="w-full space-y-6 md:max-w-lg">
           <DefaultFileUploaderExample />
           <form className="mt-6 space-y-6" action={handleCreateProject}>
             <input
@@ -143,24 +132,20 @@ export default async function Page() {
           </form>
         </div>
 
-        <div className="ml-auto mt-10 w-full max-w-4xl overflow-y-auto">
+        <div className="my-20 ml-auto mt-8 w-full max-w-4xl overflow-y-auto">
           <div className="space-y-6">
-            <h2 className="mb-2 text-xl font-bold">Projects</h2>
             {projectData &&
               projectData.map((i) => {
                 return (
                   <div
                     key={i.id}
-                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                    className="flex  flex-row justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
                   >
-                    <div>
-                      <PiProjectorScreen />
-                      <span>{i.title}</span>
+                    <div className="flex items-center">
+                      <PiProjectorScreen className="m-2 text-xl text-neutral-900" />
+                      <span className="ml-2">{i.title}</span>
                     </div>
-
-                    <button className="rounded bg-red-500 px-3 py-1 text-white hover:bg-red-700">
-                      Delete
-                    </button>
+                    <ProjectDelete projectId={i.id} />
                   </div>
                 );
               })}
@@ -170,13 +155,12 @@ export default async function Page() {
                 return (
                   <div
                     key={item.path}
-                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                    className="flex flex-row justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
                   >
-                    <div>
-                      <PiImagesBold />
-                      <span>{item.path}</span>
+                    <div className="flex items-center">
+                      <PiImagesBold className="m-2 text-xl text-neutral-900" />
+                      <span className="ml-2">{item.path}</span>
                     </div>
-
                     <FileDelete filePath={item.path} />
                   </div>
                 );
@@ -187,13 +171,12 @@ export default async function Page() {
                 return (
                   <div
                     key={item.path}
-                    className="flex items-center justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
+                    className="flex flex-row justify-between rounded-md bg-neutral-100 p-2 shadow-sm"
                   >
-                    <div className="">
-                      <PiFolderBold />
-                      <span>{item.path}</span>
+                    <div className="flex items-center">
+                      <PiFolderBold className="m-2 text-xl text-neutral-900" />
+                      <span className="ml-2">{item.path}</span>
                     </div>
-
                     <FileDelete filePath={item.path} />
                   </div>
                 );
