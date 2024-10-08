@@ -4,8 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname:
-          "amplify-myportfolio-kadyn-amplifydatabucket0f7950e-bkpow0m6stv2.s3.ap-southeast-2.amazonaws.com",
+        hostname: "https://master.d1x43m0c5zctuv.amplifyapp.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "https://kadynpearce.dev",
         port: "",
         pathname: "/**",
       },
