@@ -95,7 +95,7 @@ export default function Page() {
                   name="name"
                   type="name"
                   placeholder="Name"
-                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-none  focus:ring-2 focus:ring-neutral-900"
                   value={data.name}
                   onChange={handleInputChange}
                 />
@@ -103,7 +103,7 @@ export default function Page() {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-none  focus:ring-2 focus:ring-neutral-900"
                   value={data.email}
                   onChange={handleInputChange}
                 />
@@ -111,7 +111,7 @@ export default function Page() {
                   name="subject"
                   type="text"
                   placeholder="Subject"
-                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-neutral-800"
+                  className="w-full rounded-md bg-gray-100 px-4 py-3 text-sm outline-none  focus:ring-2 focus:ring-neutral-900"
                   value={data.subject}
                   onChange={handleInputChange}
                 />
@@ -119,7 +119,7 @@ export default function Page() {
                   name="message"
                   placeholder="Message"
                   rows={6}
-                  className="w-full resize-none rounded-md bg-gray-100 px-4 pt-3 text-sm outline-neutral-800"
+                  className="w-full resize-none rounded-md bg-gray-100 px-4 pt-3 text-sm outline-none focus:ring-2 focus:ring-neutral-900"
                   value={data.message}
                   onChange={handleInputChange}
                 ></textarea>

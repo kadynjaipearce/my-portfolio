@@ -59,6 +59,17 @@ export default function Marquees() {
           </Link>
         </div>
         <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
+          <Link href={"https://www.rust-lang.org/"}>
+            <Image
+              src="/rust.svg"
+              className="mx-auto h-32 w-auto"
+              alt="client logo"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+        </div>
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
           <Link href={"https://react.dev/"}>
             <Image
               src="/react.svg"
@@ -73,6 +84,28 @@ export default function Marquees() {
           <Link href={"https://www.typescriptlang.org/"}>
             <Image
               src="/typescript.svg"
+              className="mx-auto h-20 w-auto"
+              alt="client logo"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+        </div>
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
+          <Link href={"https://aws.amazon.com/"}>
+            <Image
+              src="/aws.svg"
+              className="mx-auto h-20 w-auto"
+              alt="client logo"
+              width={1000}
+              height={1000}
+            />
+          </Link>
+        </div>
+        <div className="mx-10 grayscale transition duration-200 hover:grayscale-0">
+          <Link href={"https://cloud.google.com/"}>
+            <Image
+              src="/cloud.svg"
               className="mx-auto h-20 w-auto"
               alt="client logo"
               width={1000}

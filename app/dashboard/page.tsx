@@ -5,13 +5,10 @@ import Container from "@/components/Container";
 import { cookies } from "next/headers";
 import "@aws-amplify/ui-react/styles.css";
 import { DefaultFileUploaderExample } from "@/components/FileUploader";
-import { redirect } from "next/navigation";
-import { FileUploader } from "@aws-amplify/ui-react-storage";
 import { CategoryName } from "@/utils/types";
-import { revalidatePath } from "next/cache";
 import { PiImagesBold, PiFolderBold, PiProjectorScreen } from "react-icons/pi";
-import FileDelete from "@/components/fileDelete";
-import ProjectDelete from "@/components/projectDelete";
+import FileDelete from "@/components/FileDelete";
+import ProjectDelete from "@/components/ProjectDelete";
 
 export default async function Page() {
   const user = await AuthGetCurrentUserServer();
@@ -66,8 +63,10 @@ export default async function Page() {
         externalUrl: rawFormData.externalUrl,
       });
 
-    console.log(errors);
+    console.error(errors);
   }
+
+  if (user?.signInDetails?.loginId != "kadynjaipearce@gmail.com") return;
 
   return (
     <Container>

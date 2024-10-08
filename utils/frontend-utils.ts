@@ -1,6 +1,12 @@
-export function calculateAge(birthDate: string) {
+// Function to calculate age from birth date
+export function calculateAge(birthDate: string): number {
   const today = new Date();
   const birth = new Date(birthDate);
+
+  // Validate birth date
+  if (isNaN(birth.getTime())) {
+    throw new Error("Invalid birth date format. Please use a valid date.");
+  }
 
   let age = today.getFullYear() - birth.getFullYear();
   const monthDifference = today.getMonth() - birth.getMonth();
@@ -15,4 +21,32 @@ export function calculateAge(birthDate: string) {
   return age;
 }
 
-export const heroData = `class Person\n{\npublic:\n\tstd::string name = "Kadyn-Jai Pearce";\n\tint age = ${calculateAge("2005-05-16")};\n\tstd::string occupation = "Software Engineering Student";\n\tstd::string hobbies = "Programming, Reading, Kickboxing";\n\tstd::string about = "Passionate software developer";\n\n\tPerson() {}\n\n\tvoid displayAboutMe() {\n\t\tstd::cout << "Name: " << name << \'\\n\'\n\t\t\t\t  << "Age: " << age << \'\\n\'\n\t\t\t\t  << "Occupation: " << occupation << \'\\n\'\n\t\t\t\t  << "Hobbies: " << hobbies << \'\\n\'\n\t\t\t\t  << "About: " << about << std::endl;\n\t}\n};`;
+function generateHeroData(): string {
+  const name = "Kadyn-Jai Pearce";
+  const age = calculateAge("2005-05-16");
+  const occupation = "Software Engineering Student";
+  const hobbies = "Programming, Reading, Kickboxing";
+  const about = "Passionate software developer";
+
+  return `class Person {
+  
+public:
+    std::string name = "${name}";
+    int age = ${age};
+    std::string occupation = "${occupation}";
+    std::string hobbies = "${hobbies}";
+    std::string about = "${about}";
+
+    Person() {}
+
+    void displayAboutMe() {
+        std::cout << "Name: " << name << '\\n'
+                  << "Age: " << age << '\\n'
+                  << "Occupation: " << occupation << '\\n'
+                  << "Hobbies: " << hobbies << '\\n'
+                  << "About: " << about << std::endl;
+    }
+};`;
+}
+
+export const heroData = generateHeroData();

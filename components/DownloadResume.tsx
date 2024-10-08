@@ -1,10 +1,10 @@
-"use clientb";
+"use client";
 import React, { useEffect, useState } from "react";
 import { getUrl } from "aws-amplify/storage";
 import { HiDownload } from "react-icons/hi";
 import Link from "next/link";
 
-function DownloadResume() {
+export default function DownloadResume() {
   const [link, setLink] = useState<URL | null>(null);
 
   const resumeDownloadLink = async () => {
@@ -42,5 +42,3 @@ function DownloadResume() {
     </Link>
   );
 }
-
-export default DownloadResume;

@@ -2,7 +2,11 @@ import React from "react";
 import { MdErrorOutline } from "react-icons/md";
 import Container from "@/components/Container";
 
-export default function ErrorComponent({ error }: { error: string }) {
+interface errorMessage {
+  error: string;
+}
+
+export default function ErrorComponent({ error }: errorMessage) {
   return (
     <Container>
       <div className="mt-20 flex items-center justify-center rounded-md border border-red-400 bg-red-100 px-6 py-4 text-red-700">

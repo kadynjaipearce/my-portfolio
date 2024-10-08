@@ -27,24 +27,6 @@ export interface ErrorData {
   [key: string]: string;
 }
 
-export interface ProjectData {
-  id: string;
-  title: string | null;
-  body: string | null;
-  img: string | null;
-  externalUrl: string | null;
-  category:
-    | "Web_Development"
-    | "Blockchain Development"
-    | "Software Engineering";
-  githubUrl: string | null;
-}
-
-export interface ProjectProps {
-  project: ProjectData[];
-  type: string;
-}
-
 export type CategoryName =
   | "Software_Engineering"
   | "Web_Development"
