@@ -71,7 +71,7 @@ export default async function Page() {
 
   return (
     <Container>
-      <div className="flex min-h-screen flex-col md:flex-row">
+      <div className="mb-10 flex min-h-screen flex-col gap-5 md:flex-row">
         <div className="w-full space-y-6 md:max-w-lg">
           <DefaultFileUploaderExample />
           <form className="mt-6 space-y-6" action={handleCreateProject}>

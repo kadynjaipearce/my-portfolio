@@ -45,10 +45,10 @@ export default function ProjectDelete({ projectId }: ProjectDeleteProps) {
   return (
     <button
       onClick={() => handleDeleteProject(projectId)}
-      className="rounded-md border-2 border-white bg-neutral-900 p-3"
+      className="group rounded-md border-2 border-white bg-neutral-900 p-3 transition-colors duration-200 ease-in-out hover:border-neutral-900 hover:bg-white"
       aria-label={`Delete project ${projectId}`}
     >
-      <RxCross2 className="text-lg text-white" />
+      <RxCross2 className="text-lg text-white transition-colors duration-200 ease-in-out group-hover:text-neutral-900" />
     </button>
   );
 }
