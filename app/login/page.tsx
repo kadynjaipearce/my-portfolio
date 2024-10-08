@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { signIn } from "aws-amplify/auth";
+import { confirmSignIn, signIn } from "aws-amplify/auth";
 import { RiAccountCircleLine } from "react-icons/ri";
 import Container from "@/components/Container";
+import next from "next";
 
 export default function Page() {
   const router = useRouter();
@@ -22,7 +23,13 @@ export default function Page() {
         password: rawFormData.password,
       });
 
-      if (nextStep.signInStep != "DONE") return;
+      if (nextStep.signInStep == "CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED") {
+        await confirmSignIn({
+          challengeResponse: rawFormData.password,
+        });
+      }
+
+      if (nextStep.signInStep != "DONE") return console.log(nextStep);
 
       router.push("/dashboard");
     } catch (error) {
