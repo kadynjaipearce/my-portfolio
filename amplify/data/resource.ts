@@ -32,7 +32,7 @@ export const data = defineData({
   authorizationModes: {
     defaultAuthorizationMode: "identityPool",
     apiKeyAuthorizationMode: {
-      expiresInDays: 999, // until i fix it
+      expiresInDays: 364, // until i fix it
     },
   },
 });
