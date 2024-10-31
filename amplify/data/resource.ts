@@ -31,6 +31,8 @@ export const data = defineData({
   schema,
   authorizationModes: {
     defaultAuthorizationMode: "identityPool",
-    apiKeyAuthorizationMode: {},
+    apiKeyAuthorizationMode: {
+      expiresInDays: 999, // until i fix it
+    },
   },
 });

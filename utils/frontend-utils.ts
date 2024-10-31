@@ -28,25 +28,33 @@ function generateHeroData(): string {
   const hobbies = "Programming, Reading, Kickboxing";
   const about = "Passionate software developer";
 
-  return `class Person {
-  
-public:
-    std::string name = "${name}";
-    int age = ${age};
-    std::string occupation = "${occupation}";
-    std::string hobbies = "${hobbies}";
-    std::string about = "${about}";
+  return `struct Person {
+    name: String,
+    age: u32,
+    occupation: String,
+    hobbies: String,
+    about: String,
+}
 
-    Person() {}
-
-    void displayAboutMe() {
-        std::cout << "Name: " << name << '\\n'
-                  << "Age: " << age << '\\n'
-                  << "Occupation: " << occupation << '\\n'
-                  << "Hobbies: " << hobbies << '\\n'
-                  << "About: " << about << std::endl;
+impl Person {
+    fn new() -> Self {
+        Person {
+            name: String::from("Kadyn-Jai Pearce"),
+            age: 19,
+            occupation: String::from("Software Engineering Student"),
+            hobbies: String::from("Programming, Reading, Kickboxing"),
+            about: String::from("Passionate software developer"),
+        }
     }
-};`;
+
+    fn display_about_me(&self) {
+        println!("Name: {}", self.name);
+        println!("Age: {}", self.age);
+        println!("Occupation: {}", self.occupation);
+        println!("Hobbies: {}", self.hobbies);
+        println!("About: {}", self.about);
+    }
+}`;
 }
 
 export const heroData = generateHeroData();
