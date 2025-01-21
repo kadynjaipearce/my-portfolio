@@ -23,7 +23,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/kadynpearce/"
+              href="https://www.instagram.com/kadynjaipearce/"
               className="p-1 hover:scale-110"
             >
               <RiInstagramLine className="" />

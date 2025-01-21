@@ -45,7 +45,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="https://www.instagram.com/kadynpearce/"
+                href="https://www.instagram.com/kadynjaipearce/"
                 className="flex items-center rounded-full border-2 border-violet-200 bg-violet-200 p-1 px-2 text-sm font-semibold text-violet-600 shadow-sm hover:scale-105"
               >
                 <RiInstagramLine className="mr-2 text-lg" /> <h1>Instagram</h1>
